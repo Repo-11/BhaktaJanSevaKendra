@@ -1,2 +1,2 @@
 # DigitalSevaKendra
-For our shop
+For our store
