@@ -1,3 +1,3 @@
 # DigitalSevaKendra
 For our store
-https://mukundabhakta.page.gd/
+https://mukundabhakta.page.gd
