@@ -4,11 +4,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Digital Seva Kendra | Professional Services</title>
+
+    <!-- SEO Optimized Title -->
+    <title>Digital Seva Kendra, Shivmandir | PAN, Insurance, Tax Services</title>
+
+    <!-- SEO Meta Description & Keywords -->
+    <meta name="description"
+        content="Visit Digital Seva Kendra in Shivmandir for all online services including vehicle insurance, PAN/Voter cards, tax filing, and more. Contact Mukunda Bhakta at +91 97332 38744.">
+    <meta name="keywords"
+        content="digital seva kendra, shivmandir, online services, pan card, insurance, passport, tax services, mukunda bhakta">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <!-- JSON-LD Structured Data for Advanced SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Digital Seva Kendra",
+      "image": "",
+      "@id": "",
+      "url": "https://mukundabhakta.page.gd",
+      "telephone": "+919733238744",
+      "description": "One-stop solution for all online government and private services in Shivmandir, including insurance, card applications, tax filing, and more.",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Pranabananda Sarani, Military Road, Halermatha",
+        "addressLocality": "Shivmandir",
+        "addressRegion": "WB",
+        "postalCode": "734013",
+        "addressCountry": "IN"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 26.718735,
+        "longitude": 88.356060
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday",
+          "Sunday"
+        ],
+        "opens": "09:00",
+        "closes": "20:00"
+      }
+    }
+    </script>
 
     <style>
         /* --- Keyframe Animations --- */
@@ -27,6 +76,10 @@
         }
 
         /* --- Basic Reset & Body Styles --- */
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
             margin: 0;
             padding: 0;
@@ -46,6 +99,7 @@
         /* --- Header Section --- */
         header {
             margin-bottom: 40px;
+            animation: fade-in-up 0.6s ease-out;
         }
 
         h1 {
@@ -106,6 +160,22 @@
             padding: 30px;
             margin-bottom: 30px;
             text-align: left;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            animation: fade-in-up 0.6s ease-out;
+            animation-fill-mode: backwards;
+        }
+
+        .card:nth-of-type(1) {
+            animation-delay: 0.2s;
+        }
+
+        .card:nth-of-type(2) {
+            animation-delay: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
         }
 
         .card h2 {
@@ -150,11 +220,10 @@
 
         .services-list li::before {
             content: '✔';
-            /* Checkmark icon */
             color: #28a745;
-            /* Green for success/check */
             font-size: 1.2rem;
             margin-right: 12px;
+            flex-shrink: 0;
         }
 
         /* --- Map Section --- */
@@ -171,6 +240,9 @@
             padding: 20px;
             font-size: 0.9rem;
             color: #777;
+            animation: fade-in-up 0.6s ease-out;
+            animation-delay: 0.4s;
+            animation-fill-mode: backwards;
         }
 
         /* --- Responsive Design for Mobile --- */
@@ -208,14 +280,14 @@
             <h1>Digital Seva Kendra</h1>
             <div class="vendor-info">
                 Pranabananda Sarani, Military Road, Halermatha, Shivmandir<br>
-                Proprietor: Mukunda Bhakta | Phone: +91 97332 38744
+                Proprietor: Mukunda Bhakta | Phone: <a href="tel:+919733238744">+91 97332 38744</a>
             </div>
         </header>
 
         <main>
-            <section class="card">
-                <h2>Our Services</h2>
-                <ul class="services-list">
+            <section class="card" id="services-card">
+                <h2 id="our-services-heading">Our Services</h2>
+                <ul class="services-list" aria-labelledby="our-services-heading">
                     <li>Insurance (All Vehicles)</li>
                     <li>Voter Card & PAN Card</li>
                     <li>Ration Card & Passport</li>
@@ -232,7 +304,7 @@
             <section class="card">
                 <h2>Find Us Here</h2>
                 <div class="map-container">
-                    <iframe
+                    <iframe title="Digital Seva Kendra Location Map"
                         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d890.950786498886!2d88.3560597971539!3d26.71873515086221!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39e446721520fead%3A0x95a32db266deee09!2sP994%2BFCH!5e0!3m2!1sen!2sin!4v1754600185294!5m2!1sen!2sin"
                         width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
                         referrerpolicy="no-referrer-when-downgrade"></iframe>
