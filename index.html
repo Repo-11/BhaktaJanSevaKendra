@@ -4,141 +4,200 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Digital Seva Kendra</title>
+    <title>Digital Seva Kendra | Professional Services</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
     <style>
+        /* --- Basic Reset & Body Styles --- */
         body {
             margin: 0;
             padding: 0;
-            font-family: 'Verdana', sans-serif;
-            background-color: #f5f5f5;
-            color: #2c3e50;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
+            font-family: 'Poppins', sans-serif;
+            background-color: #f4f7f6;
+            color: #333;
             text-align: center;
         }
 
-        div {
-            justify-content: center;
-            margin: auto;
+        /* --- Main Container for Content --- */
+        .container {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 20px;
+        }
+
+        /* --- Header Section --- */
+        header {
+            margin-bottom: 40px;
         }
 
         h1 {
-            font-size: 3rem;
-            color: #e67e22;
-            margin-top: 200px;
-            margin-bottom: 10px;
-            font-family: 'Georgia', serif;
+            font-size: 2.8rem;
+            font-weight: 700;
+            color: #0056b3;
+            /* Professional Blue */
             text-transform: uppercase;
-            letter-spacing: 1.5px;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
         }
 
         .vendor-info {
-            font-size: 1.2rem;
-            color: #34495e;
+            font-size: 1.1rem;
+            color: #555;
+            line-height: 1.6;
+            font-weight: 400;
+        }
+
+        /* --- Card Style for Sections --- */
+        .card {
+            background-color: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.05);
+            padding: 30px;
             margin-bottom: 30px;
-            line-height: 1.8;
+            text-align: left;
         }
 
-        p {
-            font-size: 1.2rem;
-            color: #2c3e50;
-            margin-bottom: 20px;
-            font-weight: lighter;
-            font-style: italic;
+        .card h2 {
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: #333;
+            margin-top: 0;
+            margin-bottom: 25px;
+            text-align: center;
+            position: relative;
         }
 
-        ul {
+        /* Underline effect for headings */
+        .card h2::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background-color: #007bff;
+            margin: 10px auto 0;
+        }
+
+        /* --- Services List --- */
+        .services-list {
             list-style: none;
             padding: 0;
             margin: 0;
-            font-size: 1.1rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            /* Two columns */
+            gap: 15px 25px;
+            /* Row and column gap */
         }
 
-        ul li {
-            margin-bottom: 12px;
-            font-weight: 500;
-            color: #2c3e50;
-            line-height: 1.5;
-        }
-
-        ul li:before {
-            content: "•";
-            color: #e67e22;
-            margin-right: 10px;
-            font-size: 1.6em;
-            vertical-align: middle;
-            /* Aligns dot with text */
-        }
-
-        /* Google Map iframe style */
-        .map-container {
-            margin-top: 20px;
-            border: 1px solid #ccc;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            padding: 15px;
-            max-width: 350px;
+        .services-list li {
+            font-size: 1rem;
+            font-weight: 400;
+            color: #444;
+            display: flex;
             align-items: center;
         }
 
-        iframe {
-            width: 100%;
-            height: 300px;
-            border: none;
-            border-radius: 6px;
+        .services-list li::before {
+            content: '✔';
+            /* Checkmark icon */
+            color: #28a745;
+            /* Green for success/check */
+            font-size: 1.2rem;
+            margin-right: 12px;
         }
 
-        /* Responsive for smaller screens */
+        /* --- Map Section --- */
+        .map-container iframe {
+            width: 100%;
+            height: 350px;
+            border: none;
+            border-radius: 8px;
+        }
+
+        /* --- Footer --- */
+        footer {
+            margin-top: 40px;
+            padding: 20px;
+            font-size: 0.9rem;
+            color: #777;
+        }
+
+        /* --- Responsive Design for Mobile --- */
         @media (max-width: 768px) {
+            .container {
+                margin: 20px auto;
+                padding: 15px;
+            }
+
             h1 {
-                font-size: 2.4rem;
-                margin-top: 20px;
-                line-height: 1.2; 
+                font-size: 2rem;
             }
 
-            .vendor-info {
-                font-size: 1rem;
+            .services-list {
+                grid-template-columns: 1fr;
+                /* Single column on mobile */
             }
 
-            ul li {
-                font-size: 1rem;
+            .card {
+                padding: 20px;
             }
 
-            iframe {
-                height: 250px;
+            .card h2 {
+                font-size: 1.5rem;
             }
         }
     </style>
 </head>
 
 <body>
-    <div>
-        <h1>DIGITAL SEVA KENDRA</h1>
-        <div class="vendor-info">
-            Halermatha-Military Road, Shivmandir <br>
-            Mukunda Bhakta | 9733238744
-        </div>
-        <p>Services offered here:</p>
-        <ul>
-            <li>Insurance: Two-Wheeler, Auto, Car, and Commercial Vehicles</li>
-            <li>Voter Card, Pan Card, Ration Card, Passport</li>
-            <li>Panchayat Property Tax, Land Revenue Tax (Khazna)</li>
-            <li>MSME, Trade License, SC/ST/OBC Certificate</li>
-            <li>Digital Life Certificate, ECHS Card, SPARSH</li>
-            <li>Scan and Print</li>
-        </ul>
 
-        <!-- Map Location -->
-        <div class="map-container">
-            <h4>Map Location</h4>
-            <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d222.7377078910557!2d88.3559814923481!3d26.718729393346326!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39e4465da54c59ad%3A0x6a148cbcdaab57dc!2sP994%2BGCH%2C%20Military%20Rd%2C%20Satyajit%20Sarani%2C%20Bairatisal%2C%20West%20Bengal%20734013!5e0!3m2!1sen!2sin!4v1728686185216!5m2!1sen!2sin"
-                width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade">
-            </iframe>
-        </div>
+    <div class="container">
+
+        <header>
+            <h1>Digital Seva Kendra</h1>
+            <div class="vendor-info">
+                Pranabananda Sarani, Military Road, Halermatha, Shivmandir<br>
+                Proprietor: Mukunda Bhakta | Phone: +91 97332 38744
+            </div>
+        </header>
+
+        <main>
+            <section class="card">
+                <h2>Our Services</h2>
+                <ul class="services-list">
+                    <li>Insurance (All Vehicles)</li>
+                    <li>Voter Card & PAN Card</li>
+                    <li>Ration Card & Passport</li>
+                    <li>Panchayat Property Tax</li>
+                    <li>Land Revenue Tax (Khazna)</li>
+                    <li>MSME & Trade License</li>
+                    <li>SC/ST/OBC Certificate</li>
+                    <li>Digital Life Certificate</li>
+                    <li>ECHS Card & SPARSH</li>
+                    <li>Scan, Print & Lamination</li>
+                </ul>
+            </section>
+
+            <section class="card">
+                <h2>Find Us Here</h2>
+                <div class="map-container">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d890.950786498886!2d88.3560597971539!3d26.71873515086221!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39e446721520fead%3A0x95a32db266deee09!2sP994%2BFCH!5e0!3m2!1sen!2sin!4v1754600185294!5m2!1sen!2sin"
+                        width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>© 2025 Digital Seva Kendra. All Rights Reserved.</p>
+        </footer>
+
     </div>
+
 </body>
 
 </html>
