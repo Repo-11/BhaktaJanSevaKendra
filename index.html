@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="bn">
 
 <head>
     <meta charset="UTF-8">
@@ -8,27 +8,65 @@
     <!-- SEO: single title (business name + primary service term, 10–60 chars) -->
     <title>Digital Seva Kendra | PAN, Insurance & Tax Services</title>
 
-    <!-- SEO: single meta description (business name + services summary, 50–160 chars) + preserved keywords -->
+    <!-- SEO: single meta description (business name + services summary, 50–160 chars) -->
     <meta name="description"
         content="Digital Seva Kendra in Shivmandir offers PAN/Voter cards, vehicle insurance, tax filing, certificates, scan & print. Call +91 97332 38744.">
     <meta name="keywords"
         content="digital seva kendra, shivmandir, online services, pan card, insurance, passport, tax services, mukunda bhakta">
 
-    <!-- Google Fonts (Poppins) — preconnect + display=swap so text stays visible during font load -->
+    <!-- Canonical + robots + theme + icon -->
+    <link rel="canonical" href="https://mukundabhakta.page.gd/">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <meta name="theme-color" content="#0B5CAD">
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+
+    <!-- hreflang alternates (single URL serves both languages) -->
+    <link rel="alternate" hreflang="bn-IN" href="https://mukundabhakta.page.gd/">
+    <link rel="alternate" hreflang="en-IN" href="https://mukundabhakta.page.gd/">
+    <link rel="alternate" hreflang="x-default" href="https://mukundabhakta.page.gd/">
+
+    <!-- Geo metadata -->
+    <meta name="geo.region" content="IN-WB">
+    <meta name="geo.placename" content="Shivmandir">
+    <meta name="geo.position" content="26.718735;88.356060">
+    <meta name="ICBM" content="26.718735, 88.356060">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Digital Seva Kendra | PAN, Insurance & Tax Services">
+    <meta property="og:description"
+        content="Digital Seva Kendra in Shivmandir offers PAN/Voter cards, vehicle insurance, tax filing, certificates, scan & print.">
+    <meta property="og:type" content="business.business">
+    <meta property="og:url" content="https://mukundabhakta.page.gd/">
+    <meta property="og:site_name" content="Digital Seva Kendra">
+    <meta property="og:image" content="https://mukundabhakta.page.gd/og-image.svg">
+    <meta property="og:locale" content="bn_IN">
+    <meta property="og:locale:alternate" content="en_US">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Digital Seva Kendra | PAN, Insurance & Tax Services">
+    <meta name="twitter:description"
+        content="Digital Seva Kendra in Shivmandir offers PAN/Voter cards, vehicle insurance, tax filing, certificates, scan & print.">
+    <meta name="twitter:image" content="https://mukundabhakta.page.gd/og-image.svg">
+
+    <!-- Google Fonts (Poppins + Noto Sans Bengali) — preconnect + display=swap -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
 
-    <!-- Structured Data: single, complete LocalBusiness block (all required fields present and non-empty) -->
+    <!-- Structured Data: LocalBusiness (expanded) -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "LocalBusiness",
+      "@id": "https://mukundabhakta.page.gd/#business",
       "name": "Digital Seva Kendra",
-      "url": "https://mukundabhakta.page.gd",
-      "telephone": "+919733238744",
+      "url": "https://mukundabhakta.page.gd/",
+      "image": "https://mukundabhakta.page.gd/og-image.svg",
       "description": "One-stop solution for all online government and private services in Shivmandir, including insurance, card applications, tax filing, and more.",
+      "telephone": "+919733238744",
+      "priceRange": "₹",
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "Pranabananda Sarani, Military Road, Halermatha",
@@ -42,6 +80,8 @@
         "latitude": 26.718735,
         "longitude": 88.356060
       },
+      "hasMap": "https://www.google.com/maps/search/?api=1&query=26.718735,88.356060",
+      "areaServed": ["Shivmandir", "Siliguri"],
       "openingHoursSpecification": {
         "@type": "OpeningHoursSpecification",
         "dayOfWeek": [
@@ -55,11 +95,96 @@
         ],
         "opens": "09:00",
         "closes": "20:00"
+      },
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Services",
+        "itemListElement": [
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Insurance (All Vehicles)" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Voter Card & PAN Card" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Ration Card & Passport" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Panchayat Property Tax" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Land Revenue Tax (Khazna)" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "MSME & Trade License" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "SC/ST/OBC Certificate" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Digital Life Certificate" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "ECHS Card & SPARSH" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Scan, Print & Lamination" } }
+        ]
       }
     }
     </script>
 
-    <!-- Critical inline CSS: keeps the page legible and content visible even if styles.css is slow or fails -->
+    <!-- Structured Data: FAQPage (mirrors visible FAQ) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What services does Digital Seva Kendra offer?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We offer vehicle insurance, PAN and Voter cards, Ration card and Passport assistance, Panchayat property tax, Land revenue tax (Khazna), MSME and Trade License, SC/ST/OBC certificates, Digital Life Certificate, ECHS Card & SPARSH, and Scan, Print & Lamination."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Where are you located and what are your opening hours?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We are at Pranabananda Sarani, Military Road, Halermatha, Shivmandir, 734013. We are open daily from 9 AM to 8 PM, all seven days a week."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How can I contact you?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "You can call us at +91 97332 38744 or message us on WhatsApp using the floating WhatsApp button on this page."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you handle PAN card, insurance, and tax services?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. We handle PAN card applications, vehicle insurance for all vehicles, Panchayat property tax, and Land revenue tax (Khazna), along with many other digital services."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <!-- Structured Data: BreadcrumbList -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://mukundabhakta.page.gd/"
+        }
+      ]
+    }
+    </script>
+
+    <!-- Structured Data: WebSite -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Digital Seva Kendra",
+      "url": "https://mukundabhakta.page.gd/",
+      "inLanguage": ["bn-IN", "en-IN"]
+    }
+    </script>
+
+    <!-- Critical inline CSS: keeps the page legible and content visible even if styles.css is slow -->
     <style>
         :root {
             color-scheme: light;
@@ -73,12 +198,14 @@
 
         html {
             -webkit-text-size-adjust: 100%;
+            /* Single-scrollbar: clip prevents horizontal overflow without a 2nd scroll container */
+            overflow-x: clip;
         }
 
         body {
             margin: 0;
             padding: 0;
-            font-family: 'Poppins', system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
+            font-family: 'Poppins', 'Noto Sans Bengali', system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
             font-size: 16px;
             line-height: 1.6;
             color: #1f2933;
@@ -91,59 +218,110 @@
             padding-inline: clamp(16px, 4vw, 32px);
         }
 
-        /* Content-visible defaults: nothing is hidden for the sake of animation.
-           Sections only become pre-animation hidden when JS confirms motion is allowed. */
-        header,
-        main,
-        section,
-        footer {
-            opacity: 1;
-        }
-
         img,
-        iframe {
+        iframe,
+        svg {
             max-width: 100%;
         }
 
         a {
             color: #0b5cad;
         }
+
+        /* Default bilingual state: Bangla visible, English hidden (mirrored in styles.css) */
+        .lang-en {
+            display: none;
+        }
+
+        /* Visually hide the language/map control inputs but keep them focusable */
+        .lang-radio,
+        .map-toggle {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            margin: -1px;
+            padding: 0;
+            overflow: hidden;
+            clip: rect(0 0 0 0);
+            clip-path: inset(50%);
+            white-space: nowrap;
+            border: 0;
+        }
     </style>
 
-    <!-- Full visual design system (created in a later task) -->
+    <!-- Full visual design system -->
     <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
 
+    <!-- Language radios + map toggle: precede .container so CSS sibling combinator can reach content -->
+    <input type="radio" name="lang" id="lang-bn" class="lang-radio" checked>
+    <input type="radio" name="lang" id="lang-en" class="lang-radio">
+    <input type="checkbox" id="load-map" class="map-toggle">
+
     <div class="container">
 
-        <!-- Task 2 — Header_Section (hero): single h1 + address, proprietor, tel link -->
-        <header class="hero">
+        <!-- Language_Switcher (segmented control) -->
+        <div class="lang-switcher" role="group" aria-label="ভাষা / Language">
+            <label for="lang-bn" lang="bn" aria-label="বাংলা" title="বাংলা">ব</label>
+            <label for="lang-en" lang="en" aria-label="English" title="English">E</label>
+        </div>
+
+        <!-- Header_Section (hero): single h1 + address, proprietor, tel link -->
+        <header class="hero animate-in">
             <h1>Digital Seva Kendra</h1>
+            <p class="hero-tagline">
+                <span class="lang-bn" lang="bn">আপনার সকল অনলাইন সরকারি ও বেসরকারি পরিষেবার এক ঠিকানা</span>
+                <span class="lang-en" lang="en">Your one-stop destination for all online government &amp; private services</span>
+            </p>
             <div class="vendor-info">
                 <address class="vendor-address">
-                    Pranabananda Sarani, Military Road, Halermatha, Shivmandir
+                    <span class="lang-bn" lang="bn">প্রণবানন্দ সরণি, মিলিটারি রোড, হালেরমাঠা, শিবমন্দির</span>
+                    <span class="lang-en" lang="en">Pranabananda Sarani, Military Road, Halermatha, Shivmandir</span>
                 </address>
                 <p class="vendor-proprietor">
-                    Proprietor: <span>Mukunda Bhakta</span>
+                    <span class="lang-bn" lang="bn">স্বত্বাধিকারী: <span class="owner-name">মুকুন্দ ভক্ত</span></span>
+                    <span class="lang-en" lang="en">Proprietor: <span class="owner-name">Mukunda Bhakta</span></span>
                 </p>
                 <p class="vendor-cta">
                     <a class="call-cta" href="tel:+919733238744" aria-label="Call Digital Seva Kendra">
                         <svg class="call-cta-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
                             <path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"/>
                         </svg>
-                        <span class="call-cta-label">Click to Call</span>
+                        <span class="call-cta-label">
+                            <span class="lang-bn" lang="bn">ফোন করুন</span>
+                            <span class="lang-en" lang="en">Click to Call</span>
+                        </span>
                     </a>
                 </p>
             </div>
         </header>
 
+        <!-- About_Section -->
+        <section class="about animate-in" aria-labelledby="about-heading">
+            <h2 id="about-heading">
+                <span class="lang-bn" lang="bn">আমাদের সম্পর্কে</span>
+                <span class="lang-en" lang="en">About Us</span>
+            </h2>
+            <p class="about-text">
+                <span class="lang-bn" lang="bn">Digital Seva Kendra শিবমন্দির, শিলিগুড়িতে অবস্থিত একটি বিশ্বস্ত ডিজিটাল পরিষেবা কেন্দ্র। স্বত্বাধিকারী মুকুন্দ ভক্তের পরিচালনায় আমরা যানবাহন বীমা, প্যান ও ভোটার কার্ড, রেশন কার্ড ও পাসপোর্ট, কর জমা, বিভিন্ন সার্টিফিকেট এবং স্ক্যান, প্রিন্ট ও ল্যামিনেশন সহ সকল অনলাইন সরকারি ও বেসরকারি পরিষেবা এক ছাদের নিচে প্রদান করি।</span>
+                <span class="lang-en" lang="en">Digital Seva Kendra is a trusted digital services center located in Shivmandir, Siliguri. Run by proprietor Mukunda Bhakta, we provide all online government and private services under one roof — including vehicle insurance, PAN and Voter cards, Ration card and Passport assistance, tax filing, various certificates, and scan, print &amp; lamination.</span>
+            </p>
+            <p class="hours-line">
+                <span class="lang-bn" lang="bn">প্রতিদিন সকাল ৯টা – রাত ৮টা খোলা</span>
+                <span class="lang-en" lang="en">Open daily 9 AM – 8 PM</span>
+            </p>
+        </section>
+
         <main>
 
-            <!-- Task 3 — Services_Section: h2 + ul of exactly 10 service items (inline SVG icon + label) -->
-            <section class="services">
-                <h2 id="services-heading">Our Services</h2>
+            <!-- Services_Section: h2 + ul of exactly 10 service items (inline SVG icon + bilingual label) -->
+            <section class="services animate-in">
+                <h2 id="services-heading">
+                    <span class="lang-bn" lang="bn">আমাদের পরিষেবা</span>
+                    <span class="lang-en" lang="en">Our Services</span>
+                </h2>
                 <ul class="services-list" aria-labelledby="services-heading">
 
                     <!-- 1. Insurance (All Vehicles) — shield-check -->
@@ -154,7 +332,10 @@
                             <path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z" />
                             <path d="m9 12 2 2 4-4" />
                         </svg>
-                        <span class="service-label">Insurance (All Vehicles)</span>
+                        <span class="service-label">
+                            <span class="lang-bn" lang="bn">বীমা (সব যানবাহন)</span>
+                            <span class="lang-en" lang="en">Insurance (All Vehicles)</span>
+                        </span>
                     </li>
 
                     <!-- 2. Voter Card & PAN Card — id-card -->
@@ -168,7 +349,10 @@
                             <circle cx="9" cy="11" r="2" />
                             <rect x="2" y="5" width="20" height="14" rx="2" />
                         </svg>
-                        <span class="service-label">Voter Card &amp; PAN Card</span>
+                        <span class="service-label">
+                            <span class="lang-bn" lang="bn">ভোটার কার্ড ও প্যান কার্ড</span>
+                            <span class="lang-en" lang="en">Voter Card &amp; PAN Card</span>
+                        </span>
                     </li>
 
                     <!-- 3. Ration Card & Passport — book/passport -->
@@ -180,7 +364,10 @@
                             <circle cx="12" cy="8" r="2" />
                             <path d="M8.5 13a3.5 3.5 0 0 1 7 0" />
                         </svg>
-                        <span class="service-label">Ration Card &amp; Passport</span>
+                        <span class="service-label">
+                            <span class="lang-bn" lang="bn">রেশন কার্ড ও পাসপোর্ট</span>
+                            <span class="lang-en" lang="en">Ration Card &amp; Passport</span>
+                        </span>
                     </li>
 
                     <!-- 4. Panchayat Property Tax — home -->
@@ -191,7 +378,10 @@
                             <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
                             <path d="M9 22V12h6v10" />
                         </svg>
-                        <span class="service-label">Panchayat Property Tax</span>
+                        <span class="service-label">
+                            <span class="lang-bn" lang="bn">পঞ্চায়েত সম্পত্তি কর</span>
+                            <span class="lang-en" lang="en">Panchayat Property Tax</span>
+                        </span>
                     </li>
 
                     <!-- 5. Land Revenue Tax (Khazna) — map/landplot -->
@@ -203,7 +393,10 @@
                             <path d="M15 5.764v15" />
                             <path d="M9 3.236v15" />
                         </svg>
-                        <span class="service-label">Land Revenue Tax (Khazna)</span>
+                        <span class="service-label">
+                            <span class="lang-bn" lang="bn">ভূমি রাজস্ব কর (খাজনা)</span>
+                            <span class="lang-en" lang="en">Land Revenue Tax (Khazna)</span>
+                        </span>
                     </li>
 
                     <!-- 6. MSME & Trade License — briefcase -->
@@ -214,7 +407,10 @@
                             <path d="M16 20V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
                             <rect x="2" y="6" width="20" height="14" rx="2" />
                         </svg>
-                        <span class="service-label">MSME &amp; Trade License</span>
+                        <span class="service-label">
+                            <span class="lang-bn" lang="bn">MSME ও ট্রেড লাইসেন্স</span>
+                            <span class="lang-en" lang="en">MSME &amp; Trade License</span>
+                        </span>
                     </li>
 
                     <!-- 7. SC/ST/OBC Certificate — award/badge -->
@@ -225,7 +421,10 @@
                             <path d="m15.477 12.89 1.515 8.526a.5.5 0 0 1-.81.47l-3.58-2.687a1 1 0 0 0-1.197 0l-3.586 2.686a.5.5 0 0 1-.81-.469l1.514-8.526" />
                             <circle cx="12" cy="8" r="6" />
                         </svg>
-                        <span class="service-label">SC/ST/OBC Certificate</span>
+                        <span class="service-label">
+                            <span class="lang-bn" lang="bn">SC/ST/OBC সার্টিফিকেট</span>
+                            <span class="lang-en" lang="en">SC/ST/OBC Certificate</span>
+                        </span>
                     </li>
 
                     <!-- 8. Digital Life Certificate — heart-pulse -->
@@ -236,7 +435,10 @@
                             <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z" />
                             <path d="M3.22 12H9.5l.5-1 2 4.5 2-7 1.5 3.5h5.27" />
                         </svg>
-                        <span class="service-label">Digital Life Certificate</span>
+                        <span class="service-label">
+                            <span class="lang-bn" lang="bn">ডিজিটাল লাইফ সার্টিফিকেট</span>
+                            <span class="lang-en" lang="en">Digital Life Certificate</span>
+                        </span>
                     </li>
 
                     <!-- 9. ECHS Card & SPARSH — shield/cross -->
@@ -248,7 +450,10 @@
                             <path d="M12 8v6" />
                             <path d="M9 11h6" />
                         </svg>
-                        <span class="service-label">ECHS Card &amp; SPARSH</span>
+                        <span class="service-label">
+                            <span class="lang-bn" lang="bn">ECHS কার্ড ও স্পর্শ</span>
+                            <span class="lang-en" lang="en">ECHS Card &amp; SPARSH</span>
+                        </span>
                     </li>
 
                     <!-- 10. Scan, Print & Lamination — printer -->
@@ -260,37 +465,117 @@
                             <path d="M6 9V3a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v6" />
                             <rect x="6" y="14" width="12" height="8" rx="1" />
                         </svg>
-                        <span class="service-label">Scan, Print &amp; Lamination</span>
+                        <span class="service-label">
+                            <span class="lang-bn" lang="bn">স্ক্যান, প্রিন্ট ও ল্যামিনেশন</span>
+                            <span class="lang-en" lang="en">Scan, Print &amp; Lamination</span>
+                        </span>
                     </li>
 
                 </ul>
             </section>
 
-            <!-- Task 4 — Map_Section: lazy-loaded Google Maps iframe + DOM fallback block (hidden by default) -->
-            <section class="map-section">
-                <h2>Find Us Here</h2>
+            <!-- Map_Section: CSS-only click-to-load facade -->
+            <section class="map-section animate-in" aria-labelledby="map-heading">
+                <h2 id="map-heading">
+                    <span class="lang-bn" lang="bn">আমাদের অবস্থান</span>
+                    <span class="lang-en" lang="en">Find Us Here</span>
+                </h2>
 
-                <div class="map-container">
+                <!-- Facade card (initial state) -->
+                <div class="map-facade">
+                    <p class="map-facade-address">
+                        <span class="lang-bn" lang="bn">প্রণবানন্দ সরণি, মিলিটারি রোড, হালেরমাঠা, শিবমন্দির, ৭৩৪০১৩</span>
+                        <span class="lang-en" lang="en">Pranabananda Sarani, Military Road, Halermatha, Shivmandir, 734013</span>
+                    </p>
+                    <label for="load-map" class="map-load-btn">
+                        <svg class="map-pin-icon" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            aria-hidden="true" focusable="false">
+                            <path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0" />
+                            <circle cx="12" cy="10" r="3" />
+                        </svg>
+                        <span class="lang-bn" lang="bn">মানচিত্র দেখুন</span>
+                        <span class="lang-en" lang="en">Load Map</span>
+                    </label>
+                </div>
+
+                <!-- Interactive embed (hidden until #load-map is checked) -->
+                <div class="map-embed">
                     <iframe id="map-frame"
                         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d890.950786498886!2d88.3560597971539!3d26.71873515086221!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39e446721520fead%3A0x95a32db266deee09!2sP994%2BFCH!5e0!3m2!1sen!2sin!4v1754600185294!5m2!1sen!2sin"
                         width="100%" loading="lazy" title="Digital Seva Kendra location map, Shivmandir"
                         referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
                 </div>
 
-                <!-- Fallback block: present in the DOM by default, hidden via CSS (Task 6),
-                     revealed by script.js (Task 7) if the iframe fails to load. -->
-                <div id="map-fallback" class="map-fallback">
-                    <p class="map-fallback-address">
-                        Pranabananda Sarani, Military Road, Halermatha, Shivmandir, 734013
+                <!-- Always-visible directions block -->
+                <div class="map-directions">
+                    <p class="map-directions-address">
+                        <span class="lang-bn" lang="bn">প্রণবানন্দ সরণি, মিলিটারি রোড, হালেরমাঠা, শিবমন্দির, ৭৩৪০১৩</span>
+                        <span class="lang-en" lang="en">Pranabananda Sarani, Military Road, Halermatha, Shivmandir, 734013</span>
                     </p>
-                    <p class="map-fallback-directions">
+                    <p class="map-directions-link">
                         <a href="https://www.google.com/maps/search/?api=1&amp;query=26.718735,88.356060"
-                            target="_blank" rel="noopener">Get Directions</a>
+                            target="_blank" rel="noopener">
+                            <span class="lang-bn" lang="bn">দিকনির্দেশ নিন</span>
+                            <span class="lang-en" lang="en">Get Directions</span>
+                        </a>
                     </p>
                 </div>
             </section>
 
-            <!-- Task 5 — Footer_Section: static copyright notice, last region under <main> -->
+            <!-- FAQ_Section: native disclosure, bilingual, ≥4 Q&A -->
+            <section class="faq animate-in" aria-labelledby="faq-heading">
+                <h2 id="faq-heading">
+                    <span class="lang-bn" lang="bn">সাধারণ জিজ্ঞাসা</span>
+                    <span class="lang-en" lang="en">FAQ</span>
+                </h2>
+
+                <details class="faq-item">
+                    <summary>
+                        <span class="lang-bn" lang="bn">Digital Seva Kendra কী কী পরিষেবা প্রদান করে?</span>
+                        <span class="lang-en" lang="en">What services does Digital Seva Kendra offer?</span>
+                    </summary>
+                    <div class="faq-answer">
+                        <span class="lang-bn" lang="bn">আমরা যানবাহন বীমা, প্যান ও ভোটার কার্ড, রেশন কার্ড ও পাসপোর্ট, পঞ্চায়েত সম্পত্তি কর, ভূমি রাজস্ব কর (খাজনা), MSME ও ট্রেড লাইসেন্স, SC/ST/OBC সার্টিফিকেট, ডিজিটাল লাইফ সার্টিফিকেট, ECHS কার্ড ও স্পর্শ এবং স্ক্যান, প্রিন্ট ও ল্যামিনেশন পরিষেবা প্রদান করি।</span>
+                        <span class="lang-en" lang="en">We offer vehicle insurance, PAN and Voter cards, Ration card and Passport assistance, Panchayat property tax, Land revenue tax (Khazna), MSME and Trade License, SC/ST/OBC certificates, Digital Life Certificate, ECHS Card &amp; SPARSH, and Scan, Print &amp; Lamination.</span>
+                    </div>
+                </details>
+
+                <details class="faq-item">
+                    <summary>
+                        <span class="lang-bn" lang="bn">আপনারা কোথায় অবস্থিত এবং খোলার সময় কী?</span>
+                        <span class="lang-en" lang="en">Where are you located and what are your opening hours?</span>
+                    </summary>
+                    <div class="faq-answer">
+                        <span class="lang-bn" lang="bn">আমরা প্রণবানন্দ সরণি, মিলিটারি রোড, হালেরমাঠা, শিবমন্দির, ৭৩৪০১৩-এ অবস্থিত। আমরা প্রতিদিন সকাল ৯টা থেকে রাত ৮টা পর্যন্ত, সপ্তাহের সাত দিনই খোলা থাকি।</span>
+                        <span class="lang-en" lang="en">We are at Pranabananda Sarani, Military Road, Halermatha, Shivmandir, 734013. We are open daily from 9 AM to 8 PM, all seven days a week.</span>
+                    </div>
+                </details>
+
+                <details class="faq-item">
+                    <summary>
+                        <span class="lang-bn" lang="bn">আমি কীভাবে আপনাদের সাথে যোগাযোগ করব?</span>
+                        <span class="lang-en" lang="en">How can I contact you?</span>
+                    </summary>
+                    <div class="faq-answer">
+                        <span class="lang-bn" lang="bn">আপনি +৯১ ৯৭৩৩২ ৩৮৭৪৪ নম্বরে ফোন করতে পারেন অথবা এই পেজের ভাসমান WhatsApp বোতাম ব্যবহার করে আমাদের বার্তা পাঠাতে পারেন।</span>
+                        <span class="lang-en" lang="en">You can call us at +91 97332 38744 or message us on WhatsApp using the floating WhatsApp button on this page.</span>
+                    </div>
+                </details>
+
+                <details class="faq-item">
+                    <summary>
+                        <span class="lang-bn" lang="bn">আপনারা কি প্যান কার্ড, বীমা ও কর পরিষেবা সামলান?</span>
+                        <span class="lang-en" lang="en">Do you handle PAN card, insurance, and tax services?</span>
+                    </summary>
+                    <div class="faq-answer">
+                        <span class="lang-bn" lang="bn">হ্যাঁ। আমরা প্যান কার্ড আবেদন, সব যানবাহনের বীমা, পঞ্চায়েত সম্পত্তি কর এবং ভূমি রাজস্ব কর (খাজনা) সহ আরও অনেক ডিজিটাল পরিষেবা সামলাই।</span>
+                        <span class="lang-en" lang="en">Yes. We handle PAN card applications, vehicle insurance for all vehicles, Panchayat property tax, and Land revenue tax (Khazna), along with many other digital services.</span>
+                    </div>
+                </details>
+            </section>
+
+            <!-- Footer_Section: static copyright notice (language-neutral) -->
             <footer class="site-footer">
                 <p>© 2025 Digital Seva Kendra. All Rights Reserved.</p>
             </footer>
@@ -298,19 +583,13 @@
         </main>
     </div>
 
-    <!-- Task 5 — floating WhatsApp CTA: fixed-position native link near the end of <body>
-         so it sits in natural tab order and is keyboard reachable/operable. -->
+    <!-- Floating WhatsApp CTA: fixed-position native link, keyboard reachable -->
     <a class="whatsapp-fab" href="https://wa.me/919733238744" target="_blank" rel="noopener"
         aria-label="Contact Digital Seva Kendra on WhatsApp">
         <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
             <path d="M.057 24l1.687-6.163a11.867 11.867 0 0 1-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 0 1 8.413 3.488 11.824 11.824 0 0 1 3.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 0 1-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 0 0 1.51 5.26l-.999 3.648 3.978-1.607zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z" />
         </svg>
     </a>
-
-    <!-- CDN enhancements + progressive enhancement script, all deferred so they never block rendering -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
-    <script src="script.js" defer></script>
 
 </body>
 

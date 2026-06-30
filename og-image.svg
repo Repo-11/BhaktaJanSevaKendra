@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630" role="img" aria-label="Digital Seva Kendra social preview">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0B5CAD"/>
+      <stop offset="1" stop-color="#08416F"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect x="60" y="60" width="1080" height="510" rx="28" fill="none" stroke="#FFFFFF" stroke-opacity="0.18" stroke-width="2"/>
+
+  <!-- Brand badge -->
+  <rect x="100" y="110" width="92" height="92" rx="20" fill="#FFFFFF"/>
+  <text x="146" y="158" text-anchor="middle" dominant-baseline="central"
+        font-family="sans-serif" font-size="34" font-weight="700" fill="#0B5CAD">DSK</text>
+
+  <!-- Business name -->
+  <text x="100" y="300" font-family="sans-serif" font-size="86" font-weight="700" fill="#FFFFFF">Digital Seva Kendra</text>
+
+  <!-- Tagline -->
+  <text x="100" y="372" font-family="sans-serif" font-size="38" font-weight="500" fill="#DCEBFB">PAN &#8226; Insurance &#8226; Tax &#8226; Certificates &#8212; Shivmandir, Siliguri</text>
+
+  <!-- Location + hours pills -->
+  <text x="100" y="470" font-family="sans-serif" font-size="32" font-weight="400" fill="#C7DDF4">Shivmandir, Siliguri, West Bengal</text>
+  <text x="100" y="520" font-family="sans-serif" font-size="32" font-weight="600" fill="#FFFFFF">Open daily 9 AM&#8211;8 PM &#8226; wa.me/919733238744</text>
+</svg>

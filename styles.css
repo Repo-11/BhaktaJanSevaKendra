@@ -1,7 +1,8 @@
 /* =============================================================================
    Digital Seva Kendra — Visual Design System
-   Hand-written CSS, no build step. Enhances the critical inline CSS in <head>.
-   Default state is always fully visible; motion is layered on only by script.js.
+   Hand-written CSS, no build step, zero JavaScript.
+   All interactivity (language switch, map facade, FAQ) and motion is CSS-only.
+   Default state is always fully visible and in Bangla.
    ============================================================================= */
 
 /* -----------------------------------------------------------------------------
@@ -41,7 +42,7 @@
     /* Motion */
     --transition-fast: 180ms ease;
 
-    --font-family: 'Poppins', system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
+    --font-family: 'Poppins', 'Noto Sans Bengali', system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
 }
 
 /* -----------------------------------------------------------------------------
@@ -55,8 +56,9 @@
 
 html {
     scroll-behavior: smooth;
-    /* Guard against any horizontal overflow from 320px upward */
-    overflow-x: hidden;
+    /* Single-scrollbar fix: `clip` prevents horizontal overflow WITHOUT
+       creating a second scroll container (unlike overflow-x: hidden). */
+    overflow-x: clip;
 }
 
 body {
@@ -68,7 +70,6 @@ body {
     line-height: 1.6;
     color: var(--ink);
     background-color: var(--page-bg);
-    overflow-x: hidden;
 }
 
 h1,
@@ -105,12 +106,45 @@ a:hover {
 }
 
 img,
-iframe {
+iframe,
+svg {
     max-width: 100%;
 }
 
 /* -----------------------------------------------------------------------------
-   3. Layout container — max 1200px, centered, responsive gutters
+   3. Bilingual language switch (CSS-only)
+   Default: Bangla visible, English hidden (mirrored in critical inline CSS).
+   Toggling #lang-en reveals English and hides Bangla across .container.
+   --------------------------------------------------------------------------- */
+.lang-en {
+    display: none;
+}
+
+#lang-en:checked~.container .lang-en {
+    display: revert;
+}
+
+#lang-en:checked~.container .lang-bn {
+    display: none;
+}
+
+/* Visually hide the radio/checkbox controls but keep them focusable */
+.lang-radio,
+.map-toggle {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* -----------------------------------------------------------------------------
+   4. Layout container — max 1200px, centered, responsive gutters
    --------------------------------------------------------------------------- */
 .container {
     max-width: 1200px;
@@ -123,21 +157,82 @@ main {
 }
 
 /* Generous vertical rhythm between primary sections */
+.about,
 .services,
-.map-section {
+.map-section,
+.faq {
     padding-block: clamp(32px, 6vw, 48px);
 }
 
 /* -----------------------------------------------------------------------------
-   4. Header / hero
+   5. Language_Switcher (segmented control)
+   --------------------------------------------------------------------------- */
+.lang-switcher {
+    display: inline-flex;
+    gap: 4px;
+    margin-block: var(--space-3) 0;
+    padding: 4px;
+    background: var(--surface);
+    border: 1px solid var(--border-strong);
+    border-radius: 999px;
+    box-shadow: var(--shadow-card);
+}
+
+.lang-switcher label {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 40px;
+    min-height: 40px;
+    padding: 8px 14px;
+    font-size: 1.05rem;
+    font-weight: 600;
+    line-height: 1;
+    color: var(--brand-blue);
+    background: transparent;
+    border-radius: 999px;
+    cursor: pointer;
+    transition: color var(--transition-fast), background var(--transition-fast);
+}
+
+/* Active language label = filled brand background.
+   Switcher lives inside .container; radios precede .container. */
+#lang-bn:checked~.container .lang-switcher label[for="lang-bn"],
+#lang-en:checked~.container .lang-switcher label[for="lang-en"] {
+    color: #fff;
+    background: var(--brand-blue);
+}
+
+/* Focus ring driven by the (visually-hidden) radio's focus-visible state */
+.lang-radio:focus-visible~.container .lang-switcher label[for="lang-bn"] {
+    outline: 3px solid var(--brand-blue);
+    outline-offset: 2px;
+}
+
+#lang-bn:focus-visible~.container .lang-switcher label[for="lang-bn"],
+#lang-en:focus-visible~.container .lang-switcher label[for="lang-en"] {
+    outline: 3px solid var(--brand-blue);
+    outline-offset: 2px;
+}
+
+/* -----------------------------------------------------------------------------
+   6. Header / hero
    --------------------------------------------------------------------------- */
 .hero {
     text-align: center;
-    padding-block: clamp(32px, 7vw, 56px);
+    padding-block: clamp(24px, 6vw, 48px);
 }
 
 .hero h1 {
     margin-bottom: var(--space-2);
+}
+
+.hero-tagline {
+    font-size: 1.05rem;
+    color: var(--ink-muted);
+    max-width: 40rem;
+    margin-inline: auto;
+    margin-bottom: var(--space-3);
 }
 
 .vendor-info {
@@ -160,13 +255,13 @@ main {
     color: var(--ink-muted);
 }
 
-.vendor-proprietor span {
+.owner-name {
     color: var(--ink);
     font-weight: 500;
 }
 
-/* Call_Control — prominent primary button (icon + "Click to Call" label).
-   Replaces the old raw-number link; the phone number is never shown as text. */
+/* Call_Control — prominent primary button (icon + label).
+   The raw phone number is never shown as text. */
 .vendor-cta {
     margin-top: var(--space-1);
 }
@@ -195,7 +290,6 @@ main {
     color: currentColor;
 }
 
-/* Pointer-only hover — color/background/shadow only, no layout shift */
 @media (hover: hover) {
     .call-cta:hover {
         color: #fff;
@@ -205,10 +299,41 @@ main {
 }
 
 /* -----------------------------------------------------------------------------
-   5. Section headings — subtle brand underline accent
+   7. About + opening hours
+   --------------------------------------------------------------------------- */
+.about {
+    text-align: center;
+}
+
+.about h2 {
+    margin-bottom: var(--space-3);
+}
+
+.about-text {
+    max-width: 52rem;
+    margin-inline: auto;
+    font-size: 1.05rem;
+    color: var(--ink-muted);
+}
+
+.hours-line {
+    margin-top: var(--space-3);
+    display: inline-flex;
+    align-items: center;
+    padding: 10px 20px;
+    font-weight: 600;
+    color: var(--accent-green);
+    background: rgba(30, 126, 79, 0.08);
+    border: 1px solid rgba(30, 126, 79, 0.25);
+    border-radius: 999px;
+}
+
+/* -----------------------------------------------------------------------------
+   8. Section headings — subtle brand underline accent
    --------------------------------------------------------------------------- */
 .services h2,
-.map-section h2 {
+.map-section h2,
+.faq h2 {
     text-align: center;
     margin-bottom: var(--space-4);
     position: relative;
@@ -216,7 +341,8 @@ main {
 }
 
 .services h2::after,
-.map-section h2::after {
+.map-section h2::after,
+.faq h2::after {
     content: "";
     position: absolute;
     left: 50%;
@@ -229,7 +355,7 @@ main {
 }
 
 /* -----------------------------------------------------------------------------
-   6. Services grid + cards
+   9. Services grid + cards
    --------------------------------------------------------------------------- */
 .services-list {
     list-style: none;
@@ -267,7 +393,6 @@ main {
     line-height: 1.4;
 }
 
-/* Pointer-only hover lift — non-essential polish, disabled under reduced motion */
 @media (hover: hover) {
     .service-item:hover {
         transform: translateY(-4px);
@@ -283,10 +408,80 @@ main {
 }
 
 /* -----------------------------------------------------------------------------
-   7. Map section + fallback
+   10. Map section — CSS-only click-to-load facade
    --------------------------------------------------------------------------- */
-.map-container {
+.map-facade {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-3);
     width: 100%;
+    min-height: clamp(300px, 45vw, 420px);
+    padding: clamp(24px, 4vw, 32px);
+    text-align: center;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-control);
+    box-shadow: var(--shadow-card);
+}
+
+.map-facade-address {
+    font-size: 1.05rem;
+    color: var(--ink-muted);
+    max-width: 36rem;
+}
+
+.map-load-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+    min-height: 44px;
+    min-width: 44px;
+    padding: 12px 24px;
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: #fff;
+    background: var(--brand-blue);
+    border: 1px solid var(--brand-blue-dark);
+    border-radius: var(--radius-control);
+    cursor: pointer;
+    transition: color var(--transition-fast), background var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.map-pin-icon {
+    flex: 0 0 auto;
+    width: 20px;
+    height: 20px;
+    color: currentColor;
+}
+
+@media (hover: hover) {
+    .map-load-btn:hover {
+        background: var(--brand-blue-dark);
+        box-shadow: var(--shadow-card-hover);
+    }
+}
+
+/* Focus ring on the load label when the (hidden) checkbox is focus-visible */
+.map-toggle:focus-visible~.container .map-load-btn {
+    outline: 3px solid var(--brand-blue);
+    outline-offset: 2px;
+}
+
+/* Embed hidden by default; revealed on checkbox check */
+.map-embed {
+    display: none;
+    width: 100%;
+}
+
+#load-map:checked~.container .map-section .map-embed {
+    display: block;
+}
+
+#load-map:checked~.container .map-section .map-facade {
+    display: none;
 }
 
 #map-frame {
@@ -297,34 +492,24 @@ main {
     display: block;
 }
 
-/* Fallback hidden by default; script.js reveals it on iframe failure */
-.map-fallback {
-    display: none;
+/* Always-visible directions block */
+.map-directions {
     margin-top: var(--space-3);
-    padding: clamp(24px, 4vw, 32px);
+    padding: clamp(20px, 4vw, 28px);
+    text-align: center;
     background: var(--surface);
     border: 1px solid var(--border);
     border-radius: var(--radius-card);
     box-shadow: var(--shadow-card);
-    text-align: center;
 }
 
-/* JS toggles either of these to reveal the fallback */
-.map-fallback.is-visible {
-    display: block;
-}
-
-#map-frame.is-hidden {
-    display: none;
-}
-
-.map-fallback-address {
+.map-directions-address {
     font-size: 1.05rem;
     color: var(--ink-muted);
     margin-bottom: var(--space-2);
 }
 
-.map-fallback-directions a {
+.map-directions-link a {
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -338,13 +523,70 @@ main {
     transition: background var(--transition-fast);
 }
 
-.map-fallback-directions a:hover {
+.map-directions-link a:hover {
     background: var(--brand-blue-dark);
     color: #fff;
 }
 
 /* -----------------------------------------------------------------------------
-   8. Footer
+   11. FAQ — native <details>/<summary> disclosure
+   --------------------------------------------------------------------------- */
+.faq-item {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-card);
+    box-shadow: var(--shadow-card);
+    margin-bottom: var(--space-2);
+    overflow: hidden;
+}
+
+.faq-item summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-2);
+    padding: clamp(16px, 3vw, 22px) clamp(20px, 4vw, 28px);
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--ink);
+    cursor: pointer;
+    list-style: none;
+    min-height: 44px;
+}
+
+/* Remove default disclosure triangle, add custom marker */
+.faq-item summary::-webkit-details-marker {
+    display: none;
+}
+
+.faq-item summary::after {
+    content: "+";
+    flex: 0 0 auto;
+    font-size: 1.5rem;
+    font-weight: 400;
+    line-height: 1;
+    color: var(--brand-blue);
+    transition: transform var(--transition-fast);
+}
+
+.faq-item[open] summary::after {
+    content: "−";
+}
+
+.faq-item summary:focus-visible {
+    outline: 3px solid var(--brand-blue);
+    outline-offset: -3px;
+}
+
+.faq-answer {
+    padding: 0 clamp(20px, 4vw, 28px) clamp(16px, 3vw, 22px);
+    color: var(--ink-muted);
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+/* -----------------------------------------------------------------------------
+   12. Footer
    --------------------------------------------------------------------------- */
 .site-footer {
     text-align: center;
@@ -357,7 +599,7 @@ main {
 }
 
 /* -----------------------------------------------------------------------------
-   9. WhatsApp floating action button
+   13. WhatsApp floating action button
    --------------------------------------------------------------------------- */
 .whatsapp-fab {
     position: fixed;
@@ -405,7 +647,7 @@ main {
 }
 
 /* -----------------------------------------------------------------------------
-   10. Accessibility — visible focus indicator (never removed without replacement)
+   14. Accessibility — visible focus indicator (never removed without replacement)
    --------------------------------------------------------------------------- */
 :focus-visible {
     outline: 3px solid var(--brand-blue);
@@ -414,51 +656,88 @@ main {
 }
 
 /* -----------------------------------------------------------------------------
-   11. Animation hooks
-   The pre-animation hidden state applies ONLY when <html> has the motion-ready
-   class, which script.js adds only after confirming GSAP loaded + motion allowed.
-   By default everything is fully visible (opacity 1).
+   15. CSS-only entrance animations
+   The hidden start-state lives ONLY inside `no-preference`, so by default
+   (and under reduced motion) all content is fully visible at rest.
    --------------------------------------------------------------------------- */
-html.motion-ready .animate-in {
-    opacity: 0;
+@media (prefers-reduced-motion: no-preference) {
+    .animate-in {
+        opacity: 0;
+        transform: translateY(24px);
+        animation: reveal 600ms ease-out forwards;
+    }
+
+    .hero.animate-in {
+        animation-delay: 0ms;
+    }
+
+    .about.animate-in {
+        animation-delay: 120ms;
+    }
+
+    .services.animate-in {
+        animation-delay: 240ms;
+    }
+
+    .map-section.animate-in {
+        animation-delay: 360ms;
+    }
+
+    .faq.animate-in {
+        animation-delay: 480ms;
+    }
+
+    @keyframes reveal {
+        to {
+            opacity: 1;
+            transform: none;
+        }
+    }
 }
 
 /* -----------------------------------------------------------------------------
-   12. Responsive — 768px breakpoint (mobile / single column primary content)
+   16. Responsive — 768px breakpoint (mobile / single column primary content)
    --------------------------------------------------------------------------- */
 @media (max-width: 768px) {
 
-    /* body text never shrinks below 16px */
     body {
         font-size: 16px;
     }
 
     .service-label,
     .vendor-address,
+    .about-text,
     .site-footer p {
         font-size: 1rem;
     }
 
-    /* Ensure interactive controls meet 44x44 touch target minimum */
+    /* Interactive controls meet 44x44 touch target minimum */
     .call-cta,
-    .map-fallback-directions a {
+    .map-load-btn,
+    .map-directions-link a {
         min-height: 44px;
         min-width: 44px;
     }
 
-    /* Keep the call CTA label legible (>=16px) on small screens */
     .call-cta {
         font-size: 1.05rem;
     }
 
-    /* Services already collapse to a single column (default grid) */
+    /* Language_Switcher options ≥44x44px on mobile */
+    .lang-switcher label {
+        min-height: 44px;
+        min-width: 44px;
+        padding: 10px 22px;
+    }
+
     .services-list {
         grid-template-columns: 1fr;
     }
 }
 
 /* -----------------------------------------------------------------------------
-   13. Reduced motion — disable transitions, transforms, FAB pulse, smooth scroll
+   17. Reduced motion — disable transitions, transforms, FAB pulse, smooth scroll.
+   Content remains fully visible (entrance start-state is not applied here).
    --------------------------------------------------------------------------- */
 @media (prefers-reduced-motion: reduce) {
 
