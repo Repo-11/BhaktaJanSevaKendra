@@ -5,27 +5,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- SEO Optimized Title -->
-    <title>Digital Seva Kendra, Shivmandir | PAN, Insurance, Tax Services</title>
+    <!-- SEO: single title (business name + primary service term, 10–60 chars) -->
+    <title>Digital Seva Kendra | PAN, Insurance & Tax Services</title>
 
-    <!-- SEO Meta Description & Keywords -->
+    <!-- SEO: single meta description (business name + services summary, 50–160 chars) + preserved keywords -->
     <meta name="description"
-        content="Visit Digital Seva Kendra in Shivmandir for all online services including vehicle insurance, PAN/Voter cards, tax filing, and more. Contact Mukunda Bhakta at +91 97332 38744.">
+        content="Digital Seva Kendra in Shivmandir offers PAN/Voter cards, vehicle insurance, tax filing, certificates, scan & print. Call +91 97332 38744.">
     <meta name="keywords"
         content="digital seva kendra, shivmandir, online services, pan card, insurance, passport, tax services, mukunda bhakta">
 
+    <!-- Google Fonts (Poppins) — preconnect + display=swap so text stays visible during font load -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
 
-    <!-- JSON-LD Structured Data for Advanced SEO -->
+    <!-- Structured Data: single, complete LocalBusiness block (all required fields present and non-empty) -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "LocalBusiness",
       "name": "Digital Seva Kendra",
-      "image": "",
-      "@id": "",
       "url": "https://mukundabhakta.page.gd",
       "telephone": "+919733238744",
       "description": "One-stop solution for all online government and private services in Shivmandir, including insurance, card applications, tax filing, and more.",
@@ -59,272 +59,258 @@
     }
     </script>
 
+    <!-- Critical inline CSS: keeps the page legible and content visible even if styles.css is slow or fails -->
     <style>
-        /* --- Keyframe Animations --- */
-        @keyframes pulse-glow {
-            0% {
-                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
-            }
-
-            70% {
-                box-shadow: 0 0 0 20px rgba(37, 211, 102, 0);
-            }
-
-            100% {
-                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
-            }
+        :root {
+            color-scheme: light;
         }
 
-        /* --- Basic Reset & Body Styles --- */
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+        }
+
         html {
-            scroll-behavior: smooth;
+            -webkit-text-size-adjust: 100%;
         }
 
         body {
             margin: 0;
             padding: 0;
-            font-family: 'Poppins', sans-serif;
-            background-color: #f4f7f6;
-            color: #333;
-            text-align: center;
-        }
-
-        /* --- Main Container for Content --- */
-        .container {
-            max-width: 800px;
-            margin: 40px auto;
-            padding: 20px;
-        }
-
-        /* --- Header Section --- */
-        header {
-            margin-bottom: 40px;
-            animation: fade-in-up 0.6s ease-out;
-        }
-
-        h1 {
-            font-size: 2.8rem;
-            font-weight: 700;
-            color: #0056b3;
-            /* Professional Blue */
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            margin-bottom: 10px;
-        }
-
-        .vendor-info {
-            font-size: 1.1rem;
-            color: #555;
+            font-family: 'Poppins', system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
+            font-size: 16px;
             line-height: 1.6;
-            font-weight: 400;
+            color: #1f2933;
+            background-color: #f4f7fb;
         }
 
-        /* --- Floating WhatsApp Button --- */
-        .floating-whatsapp {
-            position: fixed;
-            width: 60px;
-            height: 60px;
-            bottom: 30px;
-            right: 30px;
-            background-color: #25D366;
-            color: #FFF;
-            border-radius: 50%;
-            text-align: center;
-            font-size: 30px;
-            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.4);
-            z-index: 1000;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: transform 0.3s ease;
-            animation: pulse-glow 2s infinite;
+        .container {
+            max-width: 1200px;
+            margin-inline: auto;
+            padding-inline: clamp(16px, 4vw, 32px);
         }
 
-        .floating-whatsapp:hover {
-            transform: scale(1.1);
-            animation-play-state: paused;
-            /* Pause animation on hover */
-        }
-
-        .floating-whatsapp svg {
-            width: 32px;
-            height: 32px;
-            fill: #ffffff;
-        }
-
-        /* --- Card Style for Sections --- */
-        .card {
-            background-color: #ffffff;
-            border-radius: 12px;
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.05);
-            padding: 30px;
-            margin-bottom: 30px;
-            text-align: left;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            animation: fade-in-up 0.6s ease-out;
-            animation-fill-mode: backwards;
-        }
-
-        .card:nth-of-type(1) {
-            animation-delay: 0.2s;
-        }
-
-        .card:nth-of-type(2) {
-            animation-delay: 0.3s;
-        }
-
-        .card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
-        }
-
-        .card h2 {
-            font-size: 1.8rem;
-            font-weight: 600;
-            color: #333;
-            margin-top: 0;
-            margin-bottom: 25px;
-            text-align: center;
-            position: relative;
-        }
-
-        /* Underline effect for headings */
-        .card h2::after {
-            content: '';
-            display: block;
-            width: 60px;
-            height: 3px;
-            background-color: #007bff;
-            margin: 10px auto 0;
-        }
-
-        /* --- Services List --- */
-        .services-list {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            /* Two columns */
-            gap: 15px 25px;
-            /* Row and column gap */
-        }
-
-        .services-list li {
-            font-size: 1rem;
-            font-weight: 400;
-            color: #444;
-            display: flex;
-            align-items: center;
-        }
-
-        .services-list li::before {
-            content: '✔';
-            color: #28a745;
-            font-size: 1.2rem;
-            margin-right: 12px;
-            flex-shrink: 0;
-        }
-
-        /* --- Map Section --- */
-        .map-container iframe {
-            width: 100%;
-            height: 350px;
-            border: none;
-            border-radius: 8px;
-        }
-
-        /* --- Footer --- */
+        /* Content-visible defaults: nothing is hidden for the sake of animation.
+           Sections only become pre-animation hidden when JS confirms motion is allowed. */
+        header,
+        main,
+        section,
         footer {
-            margin-top: 40px;
-            padding: 20px;
-            font-size: 0.9rem;
-            color: #777;
-            animation: fade-in-up 0.6s ease-out;
-            animation-delay: 0.4s;
-            animation-fill-mode: backwards;
+            opacity: 1;
         }
 
-        /* --- Responsive Design for Mobile --- */
-        @media (max-width: 768px) {
-            .container {
-                margin: 20px auto;
-                padding: 15px;
-            }
+        img,
+        iframe {
+            max-width: 100%;
+        }
 
-            h1 {
-                font-size: 2rem;
-            }
-
-            .services-list {
-                grid-template-columns: 1fr;
-                /* Single column on mobile */
-            }
-
-            .card {
-                padding: 20px;
-            }
-
-            .card h2 {
-                font-size: 1.5rem;
-            }
+        a {
+            color: #0b5cad;
         }
     </style>
+
+    <!-- Full visual design system (created in a later task) -->
+    <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
 
     <div class="container">
 
-        <header>
+        <!-- Task 2 — Header_Section (hero): single h1 + address, proprietor, tel link -->
+        <header class="hero">
             <h1>Digital Seva Kendra</h1>
             <div class="vendor-info">
-                Pranabananda Sarani, Military Road, Halermatha, Shivmandir<br>
-                Proprietor: Mukunda Bhakta | Phone: <a href="tel:+919733238744">+91 97332 38744</a>
+                <address class="vendor-address">
+                    Pranabananda Sarani, Military Road, Halermatha, Shivmandir
+                </address>
+                <p class="vendor-proprietor">
+                    Proprietor: <span>Mukunda Bhakta</span>
+                </p>
+                <p class="vendor-cta">
+                    <a class="call-cta" href="tel:+919733238744" aria-label="Call Digital Seva Kendra">
+                        <svg class="call-cta-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+                            <path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"/>
+                        </svg>
+                        <span class="call-cta-label">Click to Call</span>
+                    </a>
+                </p>
             </div>
         </header>
 
         <main>
-            <section class="card" id="services-card">
-                <h2 id="our-services-heading">Our Services</h2>
-                <ul class="services-list" aria-labelledby="our-services-heading">
-                    <li>Insurance (All Vehicles)</li>
-                    <li>Voter Card & PAN Card</li>
-                    <li>Ration Card & Passport</li>
-                    <li>Panchayat Property Tax</li>
-                    <li>Land Revenue Tax (Khazna)</li>
-                    <li>MSME & Trade License</li>
-                    <li>SC/ST/OBC Certificate</li>
-                    <li>Digital Life Certificate</li>
-                    <li>ECHS Card & SPARSH</li>
-                    <li>Scan, Print & Lamination</li>
+
+            <!-- Task 3 — Services_Section: h2 + ul of exactly 10 service items (inline SVG icon + label) -->
+            <section class="services">
+                <h2 id="services-heading">Our Services</h2>
+                <ul class="services-list" aria-labelledby="services-heading">
+
+                    <!-- 1. Insurance (All Vehicles) — shield-check -->
+                    <li class="service-item">
+                        <svg class="service-icon" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            aria-hidden="true" focusable="false">
+                            <path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z" />
+                            <path d="m9 12 2 2 4-4" />
+                        </svg>
+                        <span class="service-label">Insurance (All Vehicles)</span>
+                    </li>
+
+                    <!-- 2. Voter Card & PAN Card — id-card -->
+                    <li class="service-item">
+                        <svg class="service-icon" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            aria-hidden="true" focusable="false">
+                            <path d="M16 10h2" />
+                            <path d="M16 14h2" />
+                            <path d="M6.17 15a3 3 0 0 1 5.66 0" />
+                            <circle cx="9" cy="11" r="2" />
+                            <rect x="2" y="5" width="20" height="14" rx="2" />
+                        </svg>
+                        <span class="service-label">Voter Card &amp; PAN Card</span>
+                    </li>
+
+                    <!-- 3. Ration Card & Passport — book/passport -->
+                    <li class="service-item">
+                        <svg class="service-icon" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            aria-hidden="true" focusable="false">
+                            <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H19a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1H6.5a1 1 0 0 1 0-5H20" />
+                            <circle cx="12" cy="8" r="2" />
+                            <path d="M8.5 13a3.5 3.5 0 0 1 7 0" />
+                        </svg>
+                        <span class="service-label">Ration Card &amp; Passport</span>
+                    </li>
+
+                    <!-- 4. Panchayat Property Tax — home -->
+                    <li class="service-item">
+                        <svg class="service-icon" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            aria-hidden="true" focusable="false">
+                            <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+                            <path d="M9 22V12h6v10" />
+                        </svg>
+                        <span class="service-label">Panchayat Property Tax</span>
+                    </li>
+
+                    <!-- 5. Land Revenue Tax (Khazna) — map/landplot -->
+                    <li class="service-item">
+                        <svg class="service-icon" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            aria-hidden="true" focusable="false">
+                            <path d="M14.106 5.553a2 2 0 0 0 1.788 0l3.659-1.83A1 1 0 0 1 21 4.619v12.764a1 1 0 0 1-.553.894l-4.553 2.277a2 2 0 0 1-1.788 0l-4.212-2.106a2 2 0 0 0-1.788 0l-3.659 1.83A1 1 0 0 1 3 19.381V6.618a1 1 0 0 1 .553-.894l4.553-2.277a2 2 0 0 1 1.788 0z" />
+                            <path d="M15 5.764v15" />
+                            <path d="M9 3.236v15" />
+                        </svg>
+                        <span class="service-label">Land Revenue Tax (Khazna)</span>
+                    </li>
+
+                    <!-- 6. MSME & Trade License — briefcase -->
+                    <li class="service-item">
+                        <svg class="service-icon" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            aria-hidden="true" focusable="false">
+                            <path d="M16 20V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
+                            <rect x="2" y="6" width="20" height="14" rx="2" />
+                        </svg>
+                        <span class="service-label">MSME &amp; Trade License</span>
+                    </li>
+
+                    <!-- 7. SC/ST/OBC Certificate — award/badge -->
+                    <li class="service-item">
+                        <svg class="service-icon" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            aria-hidden="true" focusable="false">
+                            <path d="m15.477 12.89 1.515 8.526a.5.5 0 0 1-.81.47l-3.58-2.687a1 1 0 0 0-1.197 0l-3.586 2.686a.5.5 0 0 1-.81-.469l1.514-8.526" />
+                            <circle cx="12" cy="8" r="6" />
+                        </svg>
+                        <span class="service-label">SC/ST/OBC Certificate</span>
+                    </li>
+
+                    <!-- 8. Digital Life Certificate — heart-pulse -->
+                    <li class="service-item">
+                        <svg class="service-icon" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            aria-hidden="true" focusable="false">
+                            <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z" />
+                            <path d="M3.22 12H9.5l.5-1 2 4.5 2-7 1.5 3.5h5.27" />
+                        </svg>
+                        <span class="service-label">Digital Life Certificate</span>
+                    </li>
+
+                    <!-- 9. ECHS Card & SPARSH — shield/cross -->
+                    <li class="service-item">
+                        <svg class="service-icon" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            aria-hidden="true" focusable="false">
+                            <path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z" />
+                            <path d="M12 8v6" />
+                            <path d="M9 11h6" />
+                        </svg>
+                        <span class="service-label">ECHS Card &amp; SPARSH</span>
+                    </li>
+
+                    <!-- 10. Scan, Print & Lamination — printer -->
+                    <li class="service-item">
+                        <svg class="service-icon" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            aria-hidden="true" focusable="false">
+                            <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2" />
+                            <path d="M6 9V3a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v6" />
+                            <rect x="6" y="14" width="12" height="8" rx="1" />
+                        </svg>
+                        <span class="service-label">Scan, Print &amp; Lamination</span>
+                    </li>
+
                 </ul>
             </section>
 
-            <section class="card">
+            <!-- Task 4 — Map_Section: lazy-loaded Google Maps iframe + DOM fallback block (hidden by default) -->
+            <section class="map-section">
                 <h2>Find Us Here</h2>
+
                 <div class="map-container">
-                    <iframe title="Digital Seva Kendra Location Map"
+                    <iframe id="map-frame"
                         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d890.950786498886!2d88.3560597971539!3d26.71873515086221!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39e446721520fead%3A0x95a32db266deee09!2sP994%2BFCH!5e0!3m2!1sen!2sin!4v1754600185294!5m2!1sen!2sin"
-                        width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        width="100%" loading="lazy" title="Digital Seva Kendra location map, Shivmandir"
+                        referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+                </div>
+
+                <!-- Fallback block: present in the DOM by default, hidden via CSS (Task 6),
+                     revealed by script.js (Task 7) if the iframe fails to load. -->
+                <div id="map-fallback" class="map-fallback">
+                    <p class="map-fallback-address">
+                        Pranabananda Sarani, Military Road, Halermatha, Shivmandir, 734013
+                    </p>
+                    <p class="map-fallback-directions">
+                        <a href="https://www.google.com/maps/search/?api=1&amp;query=26.718735,88.356060"
+                            target="_blank" rel="noopener">Get Directions</a>
+                    </p>
                 </div>
             </section>
+
+            <!-- Task 5 — Footer_Section: static copyright notice, last region under <main> -->
+            <footer class="site-footer">
+                <p>© 2025 Digital Seva Kendra. All Rights Reserved.</p>
+            </footer>
+
         </main>
-
-        <footer>
-            <p>© 2025 Digital Seva Kendra. All Rights Reserved.</p>
-        </footer>
-
     </div>
 
-    <!-- Floating WhatsApp Button -->
-    <a href="https://wa.me/919733238744" class="floating-whatsapp" target="_blank" title="Contact on WhatsApp">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-            <path
-                d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.35 3.45 16.86L2.05 22L7.3 20.55C8.77 21.33 10.37 21.8 12.04 21.8H12.05C17.5 21.8 21.95 17.35 21.95 11.9C21.95 9.27 20.92 6.83 19.16 4.96C17.41 3.1 14.89 2 12.04 2ZM12.05 20.15C10.57 20.15 9.12 19.74 7.84 19L7.54 18.82L4.43 19.65L5.28 16.62L5.07 16.3C4.18 14.99 3.78 13.47 3.78 11.91C3.78 7.37 7.48 3.67 12.02 3.67C14.23 3.67 16.3 4.54 17.85 6.09C19.4 7.64 20.27 9.72 20.27 11.9C20.28 16.44 16.58 20.15 12.05 20.15ZM16.53 14.23C16.29 14.12 15.09 13.56 14.87 13.48C14.64 13.4 14.48 13.36 14.31 13.6C14.15 13.84 13.63 14.42 13.49 14.58C13.35 14.74 13.21 14.76 12.97 14.65C12.73 14.53 11.91 14.25 10.92 13.36C10.13 12.66 9.58 11.82 9.44 11.58C9.3 11.34 9.41 11.23 9.53 11.11C9.64 11 9.77 10.85 9.91 10.69C10.05 10.53 10.11 10.41 10.21 10.21C10.31 10 10.25 9.82 10.19 9.7C10.13 9.58 9.71 8.54 9.53 8.1C9.35 7.66 9.17 7.72 9.05 7.71H8.57C8.45 7.71 8.21 7.77 8 8.01C7.79 8.25 7.27 8.77 7.27 9.94C7.27 11.11 8.03 12.23 8.17 12.4C8.31 12.56 9.71 14.83 11.96 15.76C12.54 16.02 12.97 16.16 13.32 16.28C13.88 16.45 14.35 16.42 14.74 16.35C15.18 16.27 16.18 15.71 16.39 15.13C16.6 14.55 16.6 14.09 16.53 14.01V14.23Z" />
+    <!-- Task 5 — floating WhatsApp CTA: fixed-position native link near the end of <body>
+         so it sits in natural tab order and is keyboard reachable/operable. -->
+    <a class="whatsapp-fab" href="https://wa.me/919733238744" target="_blank" rel="noopener"
+        aria-label="Contact Digital Seva Kendra on WhatsApp">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
+            <path d="M.057 24l1.687-6.163a11.867 11.867 0 0 1-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 0 1 8.413 3.488 11.824 11.824 0 0 1 3.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 0 1-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 0 0 1.51 5.26l-.999 3.648 3.978-1.607zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z" />
         </svg>
     </a>
+
+    <!-- CDN enhancements + progressive enhancement script, all deferred so they never block rendering -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+    <script src="script.js" defer></script>
 
 </body>
 
