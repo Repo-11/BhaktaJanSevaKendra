@@ -128,9 +128,8 @@ svg {
     display: none;
 }
 
-/* Visually hide the radio/checkbox controls but keep them focusable */
-.lang-radio,
-.map-toggle {
+/* Visually hide the radio controls but keep them focusable */
+.lang-radio {
     position: absolute;
     width: 1px;
     height: 1px;
@@ -168,12 +167,17 @@ main {
    5. Language_Switcher (segmented control)
    --------------------------------------------------------------------------- */
 .lang-switcher {
+    position: fixed;
+    left: clamp(16px, 4vw, 30px);
+    bottom: clamp(16px, 4vw, 30px);
+    z-index: 1000;
     display: inline-flex;
     gap: 4px;
-    margin-block: var(--space-3) 0;
     padding: 4px;
-    background: var(--surface);
-    border: 1px solid var(--border-strong);
+    background: rgba(255, 255, 255, 0.6);
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(135, 148, 161, 0.55);
     border-radius: 999px;
     box-shadow: var(--shadow-card);
 }
@@ -182,10 +186,10 @@ main {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    min-width: 40px;
-    min-height: 40px;
-    padding: 8px 14px;
-    font-size: 1.05rem;
+    min-width: 38px;
+    min-height: 36px;
+    padding: 7px 15px;
+    font-size: 1rem;
     font-weight: 600;
     line-height: 1;
     color: var(--brand-blue);
@@ -220,7 +224,7 @@ main {
    --------------------------------------------------------------------------- */
 .hero {
     text-align: center;
-    padding-block: clamp(24px, 6vw, 48px);
+    padding-block: clamp(24px, 5vw, 44px) clamp(24px, 6vw, 48px);
 }
 
 .hero h1 {
@@ -408,80 +412,12 @@ main {
 }
 
 /* -----------------------------------------------------------------------------
-   10. Map section — CSS-only click-to-load facade
+   10. Map section — pre-loaded interactive embed
    --------------------------------------------------------------------------- */
-.map-facade {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: var(--space-3);
-    width: 100%;
-    min-height: clamp(300px, 45vw, 420px);
-    padding: clamp(24px, 4vw, 32px);
-    text-align: center;
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: var(--radius-control);
-    box-shadow: var(--shadow-card);
-}
-
-.map-facade-address {
-    font-size: 1.05rem;
-    color: var(--ink-muted);
-    max-width: 36rem;
-}
-
-.map-load-btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 9px;
-    min-height: 44px;
-    min-width: 44px;
-    padding: 12px 24px;
-    font-size: 1.05rem;
-    font-weight: 600;
-    color: #fff;
-    background: var(--brand-blue);
-    border: 1px solid var(--brand-blue-dark);
-    border-radius: var(--radius-control);
-    cursor: pointer;
-    transition: color var(--transition-fast), background var(--transition-fast), box-shadow var(--transition-fast);
-}
-
-.map-pin-icon {
-    flex: 0 0 auto;
-    width: 20px;
-    height: 20px;
-    color: currentColor;
-}
-
-@media (hover: hover) {
-    .map-load-btn:hover {
-        background: var(--brand-blue-dark);
-        box-shadow: var(--shadow-card-hover);
-    }
-}
-
-/* Focus ring on the load label when the (hidden) checkbox is focus-visible */
-.map-toggle:focus-visible~.container .map-load-btn {
-    outline: 3px solid var(--brand-blue);
-    outline-offset: 2px;
-}
-
-/* Embed hidden by default; revealed on checkbox check */
+/* Embed shown by default (map is pre-loaded, no facade/button) */
 .map-embed {
-    display: none;
-    width: 100%;
-}
-
-#load-map:checked~.container .map-section .map-embed {
     display: block;
-}
-
-#load-map:checked~.container .map-section .map-facade {
-    display: none;
+    width: 100%;
 }
 
 #map-frame {
@@ -713,7 +649,6 @@ main {
 
     /* Interactive controls meet 44x44 touch target minimum */
     .call-cta,
-    .map-load-btn,
     .map-directions-link a {
         min-height: 44px;
         min-width: 44px;
@@ -723,15 +658,22 @@ main {
         font-size: 1.05rem;
     }
 
-    /* Language_Switcher options ≥44x44px on mobile */
+    /* Language_Switcher floating pill on mobile */
     .lang-switcher label {
-        min-height: 44px;
-        min-width: 44px;
-        padding: 10px 22px;
+        min-height: 38px;
+        min-width: 40px;
+        padding: 8px 16px;
+        font-size: 1rem;
     }
 
     .services-list {
         grid-template-columns: 1fr;
+    }
+
+    /* Clear space below the footer so the fixed WhatsApp / language buttons
+       don't overlap the copyright line on small screens */
+    .site-footer {
+        padding-bottom: clamp(84px, 22vw, 104px);
     }
 }
 

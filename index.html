@@ -233,9 +233,8 @@
             display: none;
         }
 
-        /* Visually hide the language/map control inputs but keep them focusable */
-        .lang-radio,
-        .map-toggle {
+        /* Visually hide the language control inputs but keep them focusable */
+        .lang-radio {
             position: absolute;
             width: 1px;
             height: 1px;
@@ -255,10 +254,9 @@
 
 <body>
 
-    <!-- Language radios + map toggle: precede .container so CSS sibling combinator can reach content -->
+    <!-- Language radios: precede .container so CSS sibling combinator can reach content -->
     <input type="radio" name="lang" id="lang-bn" class="lang-radio" checked>
     <input type="radio" name="lang" id="lang-en" class="lang-radio">
-    <input type="checkbox" id="load-map" class="map-toggle">
 
     <div class="container">
 
@@ -481,30 +479,15 @@
                     <span class="lang-en" lang="en">Find Us Here</span>
                 </h2>
 
-                <!-- Facade card (initial state) -->
-                <div class="map-facade">
-                    <p class="map-facade-address">
-                        <span class="lang-bn" lang="bn">প্রণবানন্দ সরণি, মিলিটারি রোড, হালেরমাঠা, শিবমন্দির, ৭৩৪০১৩</span>
-                        <span class="lang-en" lang="en">Pranabananda Sarani, Military Road, Halermatha, Shivmandir, 734013</span>
-                    </p>
-                    <label for="load-map" class="map-load-btn">
-                        <svg class="map-pin-icon" width="20" height="20" viewBox="0 0 24 24" fill="none"
-                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                            aria-hidden="true" focusable="false">
-                            <path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0" />
-                            <circle cx="12" cy="10" r="3" />
-                        </svg>
-                        <span class="lang-bn" lang="bn">মানচিত্র দেখুন</span>
-                        <span class="lang-en" lang="en">Load Map</span>
-                    </label>
-                </div>
-
-                <!-- Interactive embed (hidden until #load-map is checked) -->
+                <!-- Interactive map embed (pre-loaded). OpenStreetMap is used instead of the
+                     Google Maps JS-API embed because the latter loads heavy Google scripts that
+                     fire a csp_test beacon (blocked by ad/privacy blockers) and trigger CSP noise.
+                     OSM is a plain iframe: no third-party JS, no API key, clean console. -->
                 <div class="map-embed">
                     <iframe id="map-frame"
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d890.950786498886!2d88.3560597971539!3d26.71873515086221!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39e446721520fead%3A0x95a32db266deee09!2sP994%2BFCH!5e0!3m2!1sen!2sin!4v1754600185294!5m2!1sen!2sin"
+                        src="https://www.openstreetmap.org/export/embed.html?bbox=88.3500%2C26.7140%2C88.3620%2C26.7235&amp;layer=mapnik&amp;marker=26.718735%2C88.356060"
                         width="100%" loading="lazy" title="Digital Seva Kendra location map, Shivmandir"
-                        referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
 
                 <!-- Always-visible directions block -->
