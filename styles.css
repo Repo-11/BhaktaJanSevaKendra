@@ -1,5 +1,5 @@
 /* =============================================================================
-   Digital Seva Kendra — Visual Design System
+   Bhakta Jan Seva Kendra — Visual Design System
    Hand-written CSS, no build step, zero JavaScript.
    All interactivity (language switch, map facade, FAQ) and motion is CSS-only.
    Default state is always fully visible and in Bangla.
@@ -9,40 +9,42 @@
    1. Design tokens (palette + spacing). Palette chosen to meet WCAG AA.
    --------------------------------------------------------------------------- */
 :root {
-    /* Brand + accent colors */
-    --brand-blue: #0B5CAD;
-    --brand-blue-dark: #08416F;
-    --accent-green: #1E7E4F;
-    --whatsapp-green: #1FA855;
+  /* Brand + accent colors */
+  --brand-blue: #0b5cad;
+  --brand-blue-dark: #08416f;
+  --accent-green: #1e7e4f;
+  --whatsapp-green: #1fa855;
 
-    /* Text */
-    --ink: #1F2933;
-    --ink-muted: #52606D;
+  /* Text */
+  --ink: #1f2933;
+  --ink-muted: #52606d;
 
-    /* Surfaces + borders */
-    --page-bg: #F4F7FB;
-    --surface: #FFFFFF;
-    --border: #D7DEE6;
-    --border-strong: #8794A1;
+  /* Surfaces + borders */
+  --page-bg: #f4f7fb;
+  --surface: #ffffff;
+  --border: #d7dee6;
+  --border-strong: #8794a1;
 
-    /* 8px-based spacing scale */
-    --space-1: 8px;
-    --space-2: 16px;
-    --space-3: 24px;
-    --space-4: 32px;
-    --space-5: 48px;
-    --space-6: 64px;
+  /* 8px-based spacing scale */
+  --space-1: 8px;
+  --space-2: 16px;
+  --space-3: 24px;
+  --space-4: 32px;
+  --space-5: 48px;
+  --space-6: 64px;
 
-    /* Elevation + shape */
-    --radius-card: 14px;
-    --radius-control: 8px;
-    --shadow-card: 0 6px 20px rgba(16, 32, 64, 0.06);
-    --shadow-card-hover: 0 12px 28px rgba(16, 32, 64, 0.12);
+  /* Elevation + shape */
+  --radius-card: 14px;
+  --radius-control: 8px;
+  --shadow-card: 0 6px 20px rgba(16, 32, 64, 0.06);
+  --shadow-card-hover: 0 12px 28px rgba(16, 32, 64, 0.12);
 
-    /* Motion */
-    --transition-fast: 180ms ease;
+  /* Motion */
+  --transition-fast: 180ms ease;
 
-    --font-family: 'Poppins', 'Noto Sans Bengali', system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
+  --font-family:
+    "Poppins", "Noto Sans Bengali", system-ui, -apple-system, "Segoe UI",
+    Roboto, Arial, sans-serif;
 }
 
 /* -----------------------------------------------------------------------------
@@ -51,64 +53,64 @@
 *,
 *::before,
 *::after {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 html {
-    scroll-behavior: smooth;
-    /* Single-scrollbar fix: `clip` prevents horizontal overflow WITHOUT
+  scroll-behavior: smooth;
+  /* Single-scrollbar fix: `clip` prevents horizontal overflow WITHOUT
        creating a second scroll container (unlike overflow-x: hidden). */
-    overflow-x: clip;
+  overflow-x: clip;
 }
 
 body {
-    margin: 0;
-    padding: 0;
-    font-family: var(--font-family);
-    font-size: 16px;
-    /* never below 16px */
-    line-height: 1.6;
-    color: var(--ink);
-    background-color: var(--page-bg);
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-family);
+  font-size: 16px;
+  /* never below 16px */
+  line-height: 1.6;
+  color: var(--ink);
+  background-color: var(--page-bg);
 }
 
 h1,
 h2 {
-    line-height: 1.2;
-    margin: 0;
+  line-height: 1.2;
+  margin: 0;
 }
 
 h1 {
-    font-size: clamp(2rem, 5vw, 2.8rem);
-    font-weight: 700;
-    letter-spacing: 0.5px;
-    color: var(--brand-blue);
+  font-size: clamp(2rem, 5vw, 2.8rem);
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  color: var(--brand-blue);
 }
 
 h2 {
-    font-size: clamp(1.4rem, 3vw, 1.8rem);
-    font-weight: 600;
-    color: var(--ink);
+  font-size: clamp(1.4rem, 3vw, 1.8rem);
+  font-weight: 600;
+  color: var(--ink);
 }
 
 p {
-    margin: 0;
+  margin: 0;
 }
 
 a {
-    color: var(--brand-blue);
-    text-decoration: none;
-    transition: color var(--transition-fast);
+  color: var(--brand-blue);
+  text-decoration: none;
+  transition: color var(--transition-fast);
 }
 
 a:hover {
-    color: var(--brand-blue-dark);
+  color: var(--brand-blue-dark);
 }
 
 img,
 iframe,
 svg {
-    max-width: 100%;
+  max-width: 100%;
 }
 
 /* -----------------------------------------------------------------------------
@@ -117,42 +119,42 @@ svg {
    Toggling #lang-en reveals English and hides Bangla across .container.
    --------------------------------------------------------------------------- */
 .lang-en {
-    display: none;
+  display: none;
 }
 
-#lang-en:checked~.container .lang-en {
-    display: revert;
+#lang-en:checked ~ .container .lang-en {
+  display: revert;
 }
 
-#lang-en:checked~.container .lang-bn {
-    display: none;
+#lang-en:checked ~ .container .lang-bn {
+  display: none;
 }
 
 /* Visually hide the radio controls but keep them focusable */
 .lang-radio {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    margin: -1px;
-    padding: 0;
-    overflow: hidden;
-    clip: rect(0 0 0 0);
-    clip-path: inset(50%);
-    white-space: nowrap;
-    border: 0;
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
 }
 
 /* -----------------------------------------------------------------------------
    4. Layout container — max 1200px, centered, responsive gutters
    --------------------------------------------------------------------------- */
 .container {
-    max-width: 1200px;
-    margin-inline: auto;
-    padding-inline: clamp(16px, 4vw, 32px);
+  max-width: 1200px;
+  margin-inline: auto;
+  padding-inline: clamp(16px, 4vw, 32px);
 }
 
 main {
-    display: block;
+  display: block;
 }
 
 /* Generous vertical rhythm between primary sections */
@@ -160,176 +162,181 @@ main {
 .services,
 .map-section,
 .faq {
-    padding-block: clamp(32px, 6vw, 48px);
+  padding-block: clamp(32px, 6vw, 48px);
 }
 
 /* -----------------------------------------------------------------------------
    5. Language_Switcher (segmented control)
    --------------------------------------------------------------------------- */
 .lang-switcher {
-    position: fixed;
-    left: clamp(16px, 4vw, 30px);
-    bottom: clamp(16px, 4vw, 30px);
-    z-index: 1000;
-    display: inline-flex;
-    gap: 4px;
-    padding: 4px;
-    background: rgba(255, 255, 255, 0.6);
-    -webkit-backdrop-filter: blur(8px);
-    backdrop-filter: blur(8px);
-    border: 1px solid rgba(135, 148, 161, 0.55);
-    border-radius: 999px;
-    box-shadow: var(--shadow-card);
+  position: fixed;
+  left: clamp(16px, 4vw, 30px);
+  bottom: clamp(16px, 4vw, 30px);
+  z-index: 1000;
+  display: inline-flex;
+  gap: 4px;
+  padding: 4px;
+  background: rgba(255, 255, 255, 0.6);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(135, 148, 161, 0.55);
+  border-radius: 999px;
+  box-shadow: var(--shadow-card);
 }
 
 .lang-switcher label {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    min-width: 38px;
-    min-height: 36px;
-    padding: 7px 15px;
-    font-size: 1rem;
-    font-weight: 600;
-    line-height: 1;
-    color: var(--brand-blue);
-    background: transparent;
-    border-radius: 999px;
-    cursor: pointer;
-    transition: color var(--transition-fast), background var(--transition-fast);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 38px;
+  min-height: 36px;
+  padding: 7px 15px;
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1;
+  color: var(--brand-blue);
+  background: transparent;
+  border-radius: 999px;
+  cursor: pointer;
+  transition:
+    color var(--transition-fast),
+    background var(--transition-fast);
 }
 
 /* Active language label = filled brand background.
    Switcher lives inside .container; radios precede .container. */
-#lang-bn:checked~.container .lang-switcher label[for="lang-bn"],
-#lang-en:checked~.container .lang-switcher label[for="lang-en"] {
-    color: #fff;
-    background: var(--brand-blue);
+#lang-bn:checked ~ .container .lang-switcher label[for="lang-bn"],
+#lang-en:checked ~ .container .lang-switcher label[for="lang-en"] {
+  color: #fff;
+  background: var(--brand-blue);
 }
 
 /* Focus ring driven by the (visually-hidden) radio's focus-visible state */
-.lang-radio:focus-visible~.container .lang-switcher label[for="lang-bn"] {
-    outline: 3px solid var(--brand-blue);
-    outline-offset: 2px;
+.lang-radio:focus-visible ~ .container .lang-switcher label[for="lang-bn"] {
+  outline: 3px solid var(--brand-blue);
+  outline-offset: 2px;
 }
 
-#lang-bn:focus-visible~.container .lang-switcher label[for="lang-bn"],
-#lang-en:focus-visible~.container .lang-switcher label[for="lang-en"] {
-    outline: 3px solid var(--brand-blue);
-    outline-offset: 2px;
+#lang-bn:focus-visible ~ .container .lang-switcher label[for="lang-bn"],
+#lang-en:focus-visible ~ .container .lang-switcher label[for="lang-en"] {
+  outline: 3px solid var(--brand-blue);
+  outline-offset: 2px;
 }
 
 /* -----------------------------------------------------------------------------
    6. Header / hero
    --------------------------------------------------------------------------- */
 .hero {
-    text-align: center;
-    padding-block: clamp(24px, 5vw, 44px) clamp(24px, 6vw, 48px);
+  text-align: center;
+  padding-block: clamp(24px, 5vw, 44px) clamp(24px, 6vw, 48px);
 }
 
 .hero h1 {
-    margin-bottom: var(--space-2);
+  margin-bottom: var(--space-2);
 }
 
 .hero-tagline {
-    font-size: 1.05rem;
-    color: var(--ink-muted);
-    max-width: 40rem;
-    margin-inline: auto;
-    margin-bottom: var(--space-3);
+  font-size: 1.05rem;
+  color: var(--ink-muted);
+  max-width: 40rem;
+  margin-inline: auto;
+  margin-bottom: var(--space-3);
 }
 
 .vendor-info {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: var(--space-1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-1);
 }
 
 .vendor-address {
-    font-style: normal;
-    /* <address> defaults to italic */
-    font-size: 1.05rem;
-    color: var(--ink-muted);
-    max-width: 36rem;
+  font-style: normal;
+  /* <address> defaults to italic */
+  font-size: 1.05rem;
+  color: var(--ink-muted);
+  max-width: 36rem;
 }
 
 .vendor-proprietor {
-    font-size: 1rem;
-    color: var(--ink-muted);
+  font-size: 1rem;
+  color: var(--ink-muted);
 }
 
 .owner-name {
-    color: var(--ink);
-    font-weight: 500;
+  color: var(--ink);
+  font-weight: 500;
 }
 
 /* Call_Control — prominent primary button (icon + label).
    The raw phone number is never shown as text. */
 .vendor-cta {
-    margin-top: var(--space-1);
+  margin-top: var(--space-1);
 }
 
 .call-cta {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 9px;
-    min-height: 44px;
-    min-width: 44px;
-    padding: 12px 24px;
-    font-size: 1.05rem;
-    font-weight: 600;
-    color: #fff;
-    background: var(--brand-blue);
-    border: 1px solid var(--brand-blue-dark);
-    border-radius: var(--radius-control);
-    transition: color var(--transition-fast), background var(--transition-fast), box-shadow var(--transition-fast);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  min-height: 44px;
+  min-width: 44px;
+  padding: 12px 24px;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #fff;
+  background: var(--brand-blue);
+  border: 1px solid var(--brand-blue-dark);
+  border-radius: var(--radius-control);
+  transition:
+    color var(--transition-fast),
+    background var(--transition-fast),
+    box-shadow var(--transition-fast);
 }
 
 .call-cta-icon {
-    flex: 0 0 auto;
-    width: 20px;
-    height: 20px;
-    color: currentColor;
+  flex: 0 0 auto;
+  width: 20px;
+  height: 20px;
+  color: currentColor;
 }
 
 @media (hover: hover) {
-    .call-cta:hover {
-        color: #fff;
-        background: var(--brand-blue-dark);
-        box-shadow: var(--shadow-card-hover);
-    }
+  .call-cta:hover {
+    color: #fff;
+    background: var(--brand-blue-dark);
+    box-shadow: var(--shadow-card-hover);
+  }
 }
 
 /* -----------------------------------------------------------------------------
    7. About + opening hours
    --------------------------------------------------------------------------- */
 .about {
-    text-align: center;
+  text-align: center;
 }
 
 .about h2 {
-    margin-bottom: var(--space-3);
+  margin-bottom: var(--space-3);
 }
 
 .about-text {
-    max-width: 52rem;
-    margin-inline: auto;
-    font-size: 1.05rem;
-    color: var(--ink-muted);
+  max-width: 52rem;
+  margin-inline: auto;
+  font-size: 1.05rem;
+  color: var(--ink-muted);
 }
 
 .hours-line {
-    margin-top: var(--space-3);
-    display: inline-flex;
-    align-items: center;
-    padding: 10px 20px;
-    font-weight: 600;
-    color: var(--accent-green);
-    background: rgba(30, 126, 79, 0.08);
-    border: 1px solid rgba(30, 126, 79, 0.25);
-    border-radius: 999px;
+  margin-top: var(--space-3);
+  display: inline-flex;
+  align-items: center;
+  padding: 10px 20px;
+  font-weight: 600;
+  color: var(--accent-green);
+  background: rgba(30, 126, 79, 0.08);
+  border: 1px solid rgba(30, 126, 79, 0.25);
+  border-radius: 999px;
 }
 
 /* -----------------------------------------------------------------------------
@@ -338,77 +345,79 @@ main {
 .services h2,
 .map-section h2,
 .faq h2 {
-    text-align: center;
-    margin-bottom: var(--space-4);
-    position: relative;
-    padding-bottom: var(--space-2);
+  text-align: center;
+  margin-bottom: var(--space-4);
+  position: relative;
+  padding-bottom: var(--space-2);
 }
 
 .services h2::after,
 .map-section h2::after,
 .faq h2::after {
-    content: "";
-    position: absolute;
-    left: 50%;
-    bottom: 0;
-    transform: translateX(-50%);
-    width: 56px;
-    height: 3px;
-    border-radius: 2px;
-    background: var(--brand-blue);
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  width: 56px;
+  height: 3px;
+  border-radius: 2px;
+  background: var(--brand-blue);
 }
 
 /* -----------------------------------------------------------------------------
    9. Services grid + cards
    --------------------------------------------------------------------------- */
 .services-list {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: grid;
-    grid-template-columns: 1fr;
-    /* single column by default (mobile-first) */
-    gap: var(--space-3);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  /* single column by default (mobile-first) */
+  gap: var(--space-3);
 }
 
 .service-item {
-    display: flex;
-    align-items: center;
-    gap: var(--space-2);
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: var(--radius-card);
-    box-shadow: var(--shadow-card);
-    padding: clamp(24px, 4vw, 32px);
-    transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-card);
+  padding: clamp(24px, 4vw, 32px);
+  transition:
+    transform var(--transition-fast),
+    box-shadow var(--transition-fast);
 }
 
 .service-icon {
-    flex: 0 0 auto;
-    width: 24px;
-    height: 24px;
-    color: var(--accent-green);
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  color: var(--accent-green);
 }
 
 .service-label {
-    font-size: 1rem;
-    font-weight: 500;
-    color: var(--ink);
-    line-height: 1.4;
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--ink);
+  line-height: 1.4;
 }
 
 @media (hover: hover) {
-    .service-item:hover {
-        transform: translateY(-4px);
-        box-shadow: var(--shadow-card-hover);
-    }
+  .service-item:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-card-hover);
+  }
 }
 
 /* >768px: at least two columns, fluid auto-fit */
 @media (min-width: 769px) {
-    .services-list {
-        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    }
+  .services-list {
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  }
 }
 
 /* -----------------------------------------------------------------------------
@@ -416,179 +425,187 @@ main {
    --------------------------------------------------------------------------- */
 /* Embed shown by default (map is pre-loaded, no facade/button) */
 .map-embed {
-    display: block;
-    width: 100%;
+  display: block;
+  width: 100%;
 }
 
 #map-frame {
-    width: 100%;
-    height: clamp(300px, 45vw, 420px);
-    border: 0;
-    border-radius: var(--radius-control);
-    display: block;
+  width: 100%;
+  height: clamp(300px, 45vw, 420px);
+  border: 0;
+  border-radius: var(--radius-control);
+  display: block;
 }
 
 /* Always-visible directions block */
 .map-directions {
-    margin-top: var(--space-3);
-    padding: clamp(20px, 4vw, 28px);
-    text-align: center;
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: var(--radius-card);
-    box-shadow: var(--shadow-card);
+  margin-top: var(--space-3);
+  padding: clamp(20px, 4vw, 28px);
+  text-align: center;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-card);
 }
 
 .map-directions-address {
-    font-size: 1.05rem;
-    color: var(--ink-muted);
-    margin-bottom: var(--space-2);
+  font-size: 1.05rem;
+  color: var(--ink-muted);
+  margin-bottom: var(--space-2);
 }
 
 .map-directions-link a {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 44px;
-    padding: 10px 24px;
-    font-weight: 600;
-    color: #fff;
-    background: var(--brand-blue);
-    border: 1px solid var(--brand-blue-dark);
-    border-radius: var(--radius-control);
-    transition: background var(--transition-fast);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 10px 24px;
+  font-weight: 600;
+  color: #fff;
+  background: var(--brand-blue);
+  border: 1px solid var(--brand-blue-dark);
+  border-radius: var(--radius-control);
+  transition: background var(--transition-fast);
 }
 
 .map-directions-link a:hover {
-    background: var(--brand-blue-dark);
-    color: #fff;
+  background: var(--brand-blue-dark);
+  color: #fff;
 }
 
 /* -----------------------------------------------------------------------------
    11. FAQ — native <details>/<summary> disclosure
    --------------------------------------------------------------------------- */
 .faq-item {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: var(--radius-card);
-    box-shadow: var(--shadow-card);
-    margin-bottom: var(--space-2);
-    overflow: hidden;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-card);
+  margin-bottom: var(--space-2);
+  overflow: hidden;
 }
 
 .faq-item summary {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: var(--space-2);
-    padding: clamp(16px, 3vw, 22px) clamp(20px, 4vw, 28px);
-    font-size: 1.05rem;
-    font-weight: 600;
-    color: var(--ink);
-    cursor: pointer;
-    list-style: none;
-    min-height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-2);
+  padding: clamp(16px, 3vw, 22px) clamp(20px, 4vw, 28px);
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--ink);
+  cursor: pointer;
+  list-style: none;
+  min-height: 44px;
 }
 
 /* Remove default disclosure triangle, add custom marker */
 .faq-item summary::-webkit-details-marker {
-    display: none;
+  display: none;
 }
 
 .faq-item summary::after {
-    content: "+";
-    flex: 0 0 auto;
-    font-size: 1.5rem;
-    font-weight: 400;
-    line-height: 1;
-    color: var(--brand-blue);
-    transition: transform var(--transition-fast);
+  content: "+";
+  flex: 0 0 auto;
+  font-size: 1.5rem;
+  font-weight: 400;
+  line-height: 1;
+  color: var(--brand-blue);
+  transition: transform var(--transition-fast);
 }
 
 .faq-item[open] summary::after {
-    content: "−";
+  content: "−";
 }
 
 .faq-item summary:focus-visible {
-    outline: 3px solid var(--brand-blue);
-    outline-offset: -3px;
+  outline: 3px solid var(--brand-blue);
+  outline-offset: -3px;
 }
 
 .faq-answer {
-    padding: 0 clamp(20px, 4vw, 28px) clamp(16px, 3vw, 22px);
-    color: var(--ink-muted);
-    font-size: 1rem;
-    line-height: 1.6;
+  padding: 0 clamp(20px, 4vw, 28px) clamp(16px, 3vw, 22px);
+  color: var(--ink-muted);
+  font-size: 1rem;
+  line-height: 1.6;
 }
 
 /* -----------------------------------------------------------------------------
    12. Footer
    --------------------------------------------------------------------------- */
 .site-footer {
-    text-align: center;
-    padding-block: clamp(32px, 5vw, 48px);
-    color: var(--ink-muted);
+  text-align: center;
+  padding-block: clamp(32px, 5vw, 48px);
+  color: var(--ink-muted);
 }
 
 .site-footer p {
-    font-size: 0.95rem;
+  font-size: 0.95rem;
 }
 
 /* -----------------------------------------------------------------------------
    13. WhatsApp floating action button
    --------------------------------------------------------------------------- */
 .whatsapp-fab {
-    position: fixed;
-    right: clamp(16px, 4vw, 30px);
-    bottom: clamp(16px, 4vw, 30px);
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    background: var(--whatsapp-green);
-    color: #fff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 6px 18px rgba(31, 168, 85, 0.45);
-    z-index: 1000;
-    transition: transform var(--transition-fast), box-shadow var(--transition-fast);
-    animation: whatsapp-pulse 2.4s ease-out infinite;
+  position: fixed;
+  right: clamp(16px, 4vw, 30px);
+  bottom: clamp(16px, 4vw, 30px);
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: var(--whatsapp-green);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 6px 18px rgba(31, 168, 85, 0.45);
+  z-index: 1000;
+  transition:
+    transform var(--transition-fast),
+    box-shadow var(--transition-fast);
+  animation: whatsapp-pulse 2.4s ease-out infinite;
 }
 
 .whatsapp-fab svg {
-    width: 32px;
-    height: 32px;
-    fill: #fff;
+  width: 32px;
+  height: 32px;
+  fill: #fff;
 }
 
 .whatsapp-fab:hover {
-    color: #fff;
-    transform: scale(1.06);
-    box-shadow: 0 10px 24px rgba(31, 168, 85, 0.55);
-    animation-play-state: paused;
+  color: #fff;
+  transform: scale(1.06);
+  box-shadow: 0 10px 24px rgba(31, 168, 85, 0.55);
+  animation-play-state: paused;
 }
 
 @keyframes whatsapp-pulse {
-    0% {
-        box-shadow: 0 6px 18px rgba(31, 168, 85, 0.45), 0 0 0 0 rgba(31, 168, 85, 0.45);
-    }
+  0% {
+    box-shadow:
+      0 6px 18px rgba(31, 168, 85, 0.45),
+      0 0 0 0 rgba(31, 168, 85, 0.45);
+  }
 
-    70% {
-        box-shadow: 0 6px 18px rgba(31, 168, 85, 0.45), 0 0 0 16px rgba(31, 168, 85, 0);
-    }
+  70% {
+    box-shadow:
+      0 6px 18px rgba(31, 168, 85, 0.45),
+      0 0 0 16px rgba(31, 168, 85, 0);
+  }
 
-    100% {
-        box-shadow: 0 6px 18px rgba(31, 168, 85, 0.45), 0 0 0 0 rgba(31, 168, 85, 0);
-    }
+  100% {
+    box-shadow:
+      0 6px 18px rgba(31, 168, 85, 0.45),
+      0 0 0 0 rgba(31, 168, 85, 0);
+  }
 }
 
 /* -----------------------------------------------------------------------------
    14. Accessibility — visible focus indicator (never removed without replacement)
    --------------------------------------------------------------------------- */
 :focus-visible {
-    outline: 3px solid var(--brand-blue);
-    outline-offset: 2px;
-    border-radius: 2px;
+  outline: 3px solid var(--brand-blue);
+  outline-offset: 2px;
+  border-radius: 2px;
 }
 
 /* -----------------------------------------------------------------------------
@@ -597,84 +614,83 @@ main {
    (and under reduced motion) all content is fully visible at rest.
    --------------------------------------------------------------------------- */
 @media (prefers-reduced-motion: no-preference) {
-    .animate-in {
-        opacity: 0;
-        transform: translateY(24px);
-        animation: reveal 600ms ease-out forwards;
-    }
+  .animate-in {
+    opacity: 0;
+    transform: translateY(24px);
+    animation: reveal 600ms ease-out forwards;
+  }
 
-    .hero.animate-in {
-        animation-delay: 0ms;
-    }
+  .hero.animate-in {
+    animation-delay: 0ms;
+  }
 
-    .about.animate-in {
-        animation-delay: 120ms;
-    }
+  .about.animate-in {
+    animation-delay: 120ms;
+  }
 
-    .services.animate-in {
-        animation-delay: 240ms;
-    }
+  .services.animate-in {
+    animation-delay: 240ms;
+  }
 
-    .map-section.animate-in {
-        animation-delay: 360ms;
-    }
+  .map-section.animate-in {
+    animation-delay: 360ms;
+  }
 
-    .faq.animate-in {
-        animation-delay: 480ms;
-    }
+  .faq.animate-in {
+    animation-delay: 480ms;
+  }
 
-    @keyframes reveal {
-        to {
-            opacity: 1;
-            transform: none;
-        }
+  @keyframes reveal {
+    to {
+      opacity: 1;
+      transform: none;
     }
+  }
 }
 
 /* -----------------------------------------------------------------------------
    16. Responsive — 768px breakpoint (mobile / single column primary content)
    --------------------------------------------------------------------------- */
 @media (max-width: 768px) {
+  body {
+    font-size: 16px;
+  }
 
-    body {
-        font-size: 16px;
-    }
+  .service-label,
+  .vendor-address,
+  .about-text,
+  .site-footer p {
+    font-size: 1rem;
+  }
 
-    .service-label,
-    .vendor-address,
-    .about-text,
-    .site-footer p {
-        font-size: 1rem;
-    }
+  /* Interactive controls meet 44x44 touch target minimum */
+  .call-cta,
+  .map-directions-link a {
+    min-height: 44px;
+    min-width: 44px;
+  }
 
-    /* Interactive controls meet 44x44 touch target minimum */
-    .call-cta,
-    .map-directions-link a {
-        min-height: 44px;
-        min-width: 44px;
-    }
+  .call-cta {
+    font-size: 1.05rem;
+  }
 
-    .call-cta {
-        font-size: 1.05rem;
-    }
+  /* Language_Switcher floating pill on mobile */
+  .lang-switcher label {
+    min-height: 38px;
+    min-width: 40px;
+    padding: 8px 16px;
+    font-size: 1rem;
+  }
 
-    /* Language_Switcher floating pill on mobile */
-    .lang-switcher label {
-        min-height: 38px;
-        min-width: 40px;
-        padding: 8px 16px;
-        font-size: 1rem;
-    }
+  .services-list {
+    grid-template-columns: 1fr;
+  }
 
-    .services-list {
-        grid-template-columns: 1fr;
-    }
-
-    /* Clear space below the footer so the fixed WhatsApp / language buttons
+  /* Clear space below the footer so the fixed WhatsApp / language buttons
        don't overlap the copyright line on small screens */
-    .site-footer {
-        padding-bottom: clamp(84px, 22vw, 104px);
-    }
+  .site-footer {
+    padding-bottom: clamp(84px, 22vw, 104px);
+  }
 }
 
 /* -----------------------------------------------------------------------------
@@ -682,29 +698,28 @@ main {
    Content remains fully visible (entrance start-state is not applied here).
    --------------------------------------------------------------------------- */
 @media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
 
-    html {
-        scroll-behavior: auto;
-    }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
 
-    *,
-    *::before,
-    *::after {
-        animation-duration: 0.001ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.001ms !important;
-        scroll-behavior: auto !important;
-    }
+  .service-item:hover {
+    transform: none;
+  }
 
-    .service-item:hover {
-        transform: none;
-    }
+  .whatsapp-fab {
+    animation: none;
+  }
 
-    .whatsapp-fab {
-        animation: none;
-    }
-
-    .whatsapp-fab:hover {
-        transform: none;
-    }
+  .whatsapp-fab:hover {
+    transform: none;
+  }
 }

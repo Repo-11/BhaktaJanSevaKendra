@@ -1,13 +1,13 @@
-# Digital Seva Kendra
+# Bhakta Jan Seva Kendra
 
-> Digital Seva Kendra is a local government-services and digital-documentation
+> Bhakta Jan Seva Kendra is a local government-services and digital-documentation
 > center in Shivmandir, Siliguri (West Bengal, India), helping residents apply
 > for and manage essential cards, certificates, taxes, insurance and printing
 > services. Proprietor: Mukunda Bhakta.
 
 ## At a glance
 
-- **Business name:** Digital Seva Kendra
+- **Business name:** Bhakta Jan Seva Kendra
 - **Proprietor:** Mukunda Bhakta
 - **What it is:** A neighbourhood digital seva (service) center handling government
   documentation, certificates, tax payments, insurance and print/scan work.
@@ -34,7 +34,7 @@
 
 ## Services
 
-Digital Seva Kendra offers the following ten services:
+Bhakta Jan Seva Kendra offers the following ten services:
 
 - Insurance (All Vehicles)
 - Voter Card & PAN Card
@@ -49,7 +49,7 @@ Digital Seva Kendra offers the following ten services:
 
 ## About
 
-Digital Seva Kendra is a trusted local service center in Shivmandir, Siliguri,
+Bhakta Jan Seva Kendra is a trusted local service center in Shivmandir, Siliguri,
 run by proprietor Mukunda Bhakta. It helps residents of Shivmandir and the wider
 Siliguri area complete everyday government and digital paperwork in one place —
 from applying for PAN, Voter, Ration and ECHS cards to paying Panchayat property
@@ -57,4 +57,4 @@ tax and land revenue (Khazna), obtaining SC/ST/OBC and Digital Life certificates
 arranging vehicle insurance and MSME/Trade licenses, and handling passport,
 scanning, printing and lamination work. The center serves customers in both
 Bangla and English and is open every day from 9 AM to 8 PM. The quickest way to
-reach Digital Seva Kendra is by phone or WhatsApp at +91 97332 38744.
+reach Bhakta Jan Seva Kendra is by phone or WhatsApp at +91 97332 38744.
