@@ -1,3 +1,3 @@
-# DigitalSevaKendra
+# Bhakta Jan Seva Kendra
 For our store
-https://mukundabhakta.page.gd
+https://repo-11.github.io/BhaktaJanSevaKendra/

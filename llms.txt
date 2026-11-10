@@ -11,7 +11,7 @@
 - **Proprietor:** Mukunda Bhakta
 - **What it is:** A neighbourhood digital seva (service) center handling government
   documentation, certificates, tax payments, insurance and print/scan work.
-- **Website:** https://mukundabhakta.page.gd/
+- **Website:** https://repo-11.github.io/BhaktaJanSevaKendra/
 - **Languages:** Bangla (default) and English
 
 ## Location

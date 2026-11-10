@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://mukundabhakta.page.gd/sitemap.xml
+Sitemap: https://repo-11.github.io/BhaktaJanSevaKendra/sitemap.xml
