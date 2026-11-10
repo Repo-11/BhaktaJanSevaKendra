@@ -12,7 +12,7 @@
   <!-- Brand badge -->
   <rect x="100" y="110" width="92" height="92" rx="20" fill="#FFFFFF"/>
   <text x="146" y="158" text-anchor="middle" dominant-baseline="central"
-        font-family="sans-serif" font-size="34" font-weight="700" fill="#0B5CAD">DSK</text>
+        font-family="sans-serif" font-size="34" font-weight="700" fill="#0B5CAD">BJSK</text>
 
   <!-- Business name -->
   <text x="100" y="300" font-family="sans-serif" font-size="86" font-weight="700" fill="#FFFFFF">Bhakta Jan Seva Kendra</text>
